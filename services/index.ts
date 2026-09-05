@@ -1,1 +1,0 @@
-export { wordPressService } from "./wordpress";
