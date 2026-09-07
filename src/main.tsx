@@ -1,10 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { AppHeader } from "./components/app-header";
+import { AppFooter } from "./components/app-footer";
 import Page from "./page";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Page />
+    <AppHeader />
+    <main className="px-4 sm:px-6 lg:px-8">
+      <Page />
+    </main>
+    <AppFooter />
   </StrictMode>,
 );
