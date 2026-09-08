@@ -6,18 +6,77 @@ import {
   staggerItem,
   VIEWPORT,
 } from "@/lib/animation";
-import { User } from "lucide-react";
+import {
+  BarChart3,
+  Blocks,
+  Boxes,
+  Brain,
+  Cloud,
+  Code2,
+  Database,
+  Globe,
+  Network,
+  Smartphone,
+  type LucideIcon,
+} from "lucide-react";
+
+const COURSE_ICONS: Record<string, LucideIcon> = {
+  "Algoritma & Pemrograman": Code2,
+  "Struktur Data": Boxes,
+  "Pemrograman": Blocks,
+  "Pemrograman Berorientasi Objek": Blocks,
+  "Basis Data": Database,
+  "Sistem Basis Data": Database,
+  "Jaringan Komputer": Network,
+  "Cloud Computing": Cloud,
+  "Komputasi Awan (Cloud)": Cloud,
+  "Pemrograman Web": Globe,
+  "Mobile Programming": Smartphone,
+  "Pemrograman Bergerak (Mobile)": Smartphone,
+  "Data Mining": BarChart3,
+  "Data Mining & Analitika": BarChart3,
+  "Machine Learning": Brain,
+  "Machine Learning & AI": Brain,
+};
+
+function getCourseIcon(name: string): LucideIcon {
+  if (COURSE_ICONS[name]) return COURSE_ICONS[name];
+  const lower = name.toLowerCase();
+  if (lower.includes("algoritma")) return Code2;
+  if (lower.includes("struktur data")) return Boxes;
+  if (lower.includes("pemrograman") && (lower.includes("objek") || lower.includes("oop"))) return Blocks;
+  if (lower.includes("basis data") || lower.includes("database")) return Database;
+  if (lower.includes("jaringan") || lower.includes("network")) return Network;
+  if (lower.includes("awan") || lower.includes("cloud")) return Cloud;
+  if (lower.includes("web")) return Globe;
+  if (lower.includes("mobile") || lower.includes("bergerak")) return Smartphone;
+  if (lower.includes("mining") || lower.includes("data")) return BarChart3;
+  if (lower.includes("learning") || lower.includes("ai")) return Brain;
+  return Code2;
+}
+
+function CourseIconBadge({ name }: { name: string }) {
+  const Icon = getCourseIcon(name);
+  return (
+    <motion.div
+      className="flex justify-center items-center size-8 text-neutral-500"
+      whileHover={{ scale: 1.2, color: "#6366f1", transition: { duration: 0.2 } }}
+    >
+      <Icon size={20} aria-hidden="true" />
+    </motion.div>
+  );
+}
 
 export function CoursesSection() {
   return (
     <div id="mata-kuliah" className="bg-white space-y-20 py-20 overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0">
+      <div className="w-full max-w-7xl space-y-20 mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0">
         <motion.hgroup
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className="max-w-lg mx-auto text-center"
+          className="max-w-lg"
         >
           <h3 className="text-balance text-4xl font-medium tracking-tight sm:text-5xl">
             {coursesHeading}
@@ -60,18 +119,13 @@ export function CoursesSection() {
               </div>
 
               <div className="flex items-center gap-x-5">
-                <motion.div
-                  className="flex justify-center items-center size-8 text-neutral-500"
-                  whileHover={{ scale: 1.2, color: "#6366f1", transition: { duration: 0.2 } }}
-                >
-                  <User size={20} />
-                </motion.div>
+                <CourseIconBadge name={item.name} />
                 <h3 className="text-lg/8 font-medium tracking-tight text-neutral-900 sm:text-xl lg:text-2xl">
                   {item.name}
                 </h3>
               </div>
 
-              <p className="mt-4 leading-7 text-neutral-600 lg:text-lg/relaxed">
+              <p className="mt-4 text-sm/6 text-neutral-600 lg:text-base/7">
                 {item.description}
               </p>
             </motion.div>

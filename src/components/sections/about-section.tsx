@@ -78,7 +78,7 @@ export function AboutSection() {
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row"
+            className="mt-10 flex flex-col gap-x-8 gap-y-20 lg:flex-row"
           >
             <div className="lg:w-full lg:max-w-6xl lg:flex-auto">
               <motion.p
@@ -101,7 +101,7 @@ export function AboutSection() {
             initial="hidden"
             whileInView="visible"
             viewport={VIEWPORT}
-            className="mx-auto max-w-2xl space-y-16 overflow-hidden py-20 lg:mx-0 lg:max-w-none"
+            className="mx-auto max-w-2xl space-y-20 overflow-hidden py-20 lg:mx-0 lg:max-w-none"
           >
             {aboutTimeline.map((item) => (
               <motion.div
@@ -122,10 +122,10 @@ export function AboutSection() {
                     className="absolute -ml-2 h-px w-screen -translate-x-full bg-neutral-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-6 lg:w-auto lg:flex-auto lg:translate-x-0"
                   />
                 </div>
-                <h3 className="text-lg/8 font-medium tracking-tight text-neutral-900 mt-6 sm:text-xl lg:text-2xl">
+                <h3 className="text-lg/8 font-medium tracking-tight text-neutral-900 mt-8 sm:text-xl lg:text-2xl">
                   {item.name}
                 </h3>
-                <p className="mt-3 leading-7 text-neutral-700 md:text-lg/relaxed">
+                <p className="mt-5 leading-7 text-neutral-700 md:text-lg/relaxed">
                   {item.description}
                 </p>
               </motion.div>

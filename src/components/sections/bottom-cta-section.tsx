@@ -15,14 +15,6 @@ export function BottomCtaSection() {
         viewport={VIEWPORT}
         className="relative z-20 mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 text-center"
       >
-        <motion.span
-          variants={fadeDown}
-          className="inline-flex items-center gap-x-2 rounded-full bg-white/70 backdrop-blur-sm border border-neutral-200 px-4 py-1.5 text-sm font-medium text-neutral-600 shadow-sm"
-        >
-          <span className="size-1.5 rounded-full bg-indigo-500 animate-pulse" />
-          Bergabung Sekarang
-        </motion.span>
-
         <motion.h1
           variants={fadeUp}
           className="text-4xl font-semibold tracking-tight text-neutral-800 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] md:text-6xl"

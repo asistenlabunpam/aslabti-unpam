@@ -29,13 +29,13 @@ export function LabRoomsSection() {
             </motion.h2>
           </motion.div>
 
-          <div className="space-y-16 border-t border-neutral-200">
+          <div className="space-y-20">
             {labRooms.map((feature, index) => {
               const isEven = index % 2 === 0;
               return (
                 <div
                   key={feature.name}
-                  className="flex flex-col pt-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16"
+                  className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16"
                 >
                   <motion.div
                     variants={isEven ? fadeLeft : fadeRight}
@@ -49,7 +49,7 @@ export function LabRoomsSection() {
                       alt={feature.imageAlt}
                       src={feature.imageSrc}
                       loading="lazy"
-                      className="aspect-3/2 w-full bg-neutral-100 object-cover"
+                      className="aspect-4/3 w-full bg-neutral-100 object-cover"
                       whileHover={{
                         scale: 1.05,
                         transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },

@@ -91,76 +91,76 @@ export const rightFeatures: NumberedFeature[] = [
   },
 ];
 
-export const coursesHeading = "Mata Kuliah Praktikum Unggulan";
+export const coursesHeading = "Mata Kuliah Praktikum Asisten Laboratorium";
 
 export const timeline: TimelineItem[] = [
   {
     name: "Algoritma & Pemrograman",
     description:
-      "Fondasi logika pemrograman menggunakan C++, struktur kontrol perulangan dan percabangan, fungsi modular, array, string, serta pengenalan efisiensi algoritma komputasi.",
+      "Penguasaan fondasi logika komputasi dan pemrograman terstruktur, mencakup struktur kontrol percabangan dan perulangan, modularitas fungsi, manipulasi array dan pointer, hingga pengenalan efisiensi algoritma komputasi menggunakan C/C++. Praktikum ini diselenggarakan pada Semester 1 (Dasar) dan Semester 3 (Lanjutan) dengan bobot 3 SKS.",
     date: "Semester 1",
     dateTime: "Sem-1",
   },
   {
     name: "Struktur Data",
     description:
-      "Implementasi struktur data fundamental meliputi pointer, linked list, stack, queue, binary tree, dan graph dengan analisis optimasi kompleksitas memori dan waktu.",
+      "Implementasi struktur data fundamental meliputi pointer, linked list, stack, queue, binary search tree, dan graph yang disertai pemahaman analisis optimasi memori dan kompleksitas waktu komputasi (Big-O). Praktikum ini diselenggarakan pada Semester 2 dengan bobot 3 SKS.",
     date: "Semester 2",
     dateTime: "Sem-2",
   },
   {
-    name: "Pemrograman Berorientasi Objek",
+    name: "Pemrograman",
     description:
-      "Penerapan paradigma OOP modern mencakup class, object, encapsulation, inheritance, polymorphism, dan exception handling untuk rancang bangun software modular.",
+      "Penerapan paradigma Object-Oriented Programming (OOP) modern, mencakup konsep class, object, encapsulation, inheritance, polymorphism, dan exception handling untuk menghasilkan arsitektur perangkat lunak yang modular dan andal. Praktikum ini mencakup Pemrograman 1 (Semester 4) dan Pemrograman 2 (Semester 6) dengan bobot 3 SKS.",
     date: "Semester 3",
     dateTime: "Sem-3",
   },
   {
-    name: "Sistem Basis Data",
+    name: "Basis Data",
     description:
-      "Perancangan model relasional (ERD & normalisasi), manipulasi data tingkat lanjut dengan SQL (DDL/DML), indexing, serta manajemen integritas dan keamanan database.",
+      "Perancangan model basis data relasional melalui pemodelan ERD dan teknik normalisasi, penulisan query tingkat lanjut dengan SQL (DDL, DML, DCL), optimasi query menggunakan indexing, serta pengelolaan integritas dan keamanan database. Praktikum ini mencakup Basis Data 1 (Semester 3) dan Basis Data 2 (Semester 6) dengan bobot 3 SKS.",
     date: "Semester 3",
     dateTime: "Sem-3",
   },
   {
     name: "Jaringan Komputer",
     description:
-      "Arsitektur jaringan model OSI & TCP/IP, addressing & subnetting IPv4/IPv6, konfigurasi router & switch, VLAN, serta troubleshooting konektivitas jaringan komputer.",
+      "Arsitektur jaringan komputer model OSI dan TCP/IP, skema addressing & subnetting IPv4/IPv6, konfigurasi perangkat jaringan router dan switch, implementasi VLAN, serta simulasi dan troubleshooting konektivitas jaringan secara komprehensif. Praktikum ini diselenggarakan pada Semester 4 dengan bobot 3 SKS.",
     date: "Semester 4",
     dateTime: "Sem-4",
   },
   {
-    name: "Komputasi Awan (Cloud)",
+    name: "Cloud Computing",
     description:
-      "Implementasi arsitektur cloud (IaaS, PaaS, SaaS), deployment container dengan Docker, orkestrasi layanan, dan konfigurasi server virtual di lingkungan cloud.",
+      "Implementasi arsitektur komputasi awan (IaaS, PaaS, SaaS), deployment dan isolasi aplikasi berbasis container menggunakan Docker, manajemen orkestrasi layanan, serta konfigurasi server virtual pada environment cloud. Praktikum ini diselenggarakan pada Semester 4 dengan bobot 3 SKS.",
     date: "Semester 4",
     dateTime: "Sem-4",
   },
   {
     name: "Pemrograman Web",
     description:
-      "Pengembangan aplikasi web modern dan responsif berbasis HTML5, CSS framework, JavaScript/TypeScript, konsumsi RESTful API, dan integrasi fullstack framework.",
+      "Rancang bangun aplikasi web modern, responsif, dan performan berbasis standar HTML5, modern CSS, JavaScript/TypeScript, konsumsi RESTful API, hingga integrasi arsitektur fullstack framework yang selaras dengan standar industri. Praktikum ini mencakup Pemrograman Web 1 (Semester 5) dan Pemrograman Web 2 (Semester 7) dengan bobot 3 SKS.",
     date: "Semester 5",
     dateTime: "Sem-5",
   },
   {
-    name: "Pemrograman Bergerak (Mobile)",
+    name: "Mobile Programming",
     description:
-      "Rancang bangun aplikasi mobile Android multiplatform dengan Flutter dan Kotlin, manajemen state terstruktur, konsumsi API, dan pemanfaatan hardware perangkat.",
+      "Pengembangan aplikasi mobile modern multiplatform untuk platform Android dan iOS menggunakan Flutter dan Kotlin, mencakup implementasi clean architecture, manajemen state terstruktur, konsumsi web service, dan akses hardware perangkat. Praktikum ini diselenggarakan pada Semester 6 dengan bobot 3 SKS.",
     date: "Semester 6",
     dateTime: "Sem-6",
   },
   {
-    name: "Data Mining & Analitika",
+    name: "Data Mining",
     description:
-      "Eksplorasi data volume besar melalui teknik data preprocessing, association rules, klastering, dan klasifikasi algoritma cerdas untuk menghasilkan insight presisi.",
+      "Eksplorasi dan penambangan wawasan berharga dari himpunan data skala besar melalui tahapan data preprocessing, ekstraksi pola asosiasi, klastering data, dan pemodelan klasifikasi cerdas untuk analitika bisnis dan prediksi. Praktikum ini diselenggarakan pada Semester 6 dengan bobot 2 SKS.",
     date: "Semester 6",
     dateTime: "Sem-6",
   },
   {
-    name: "Machine Learning & AI",
+    name: "Machine Learning",
     description:
-      "Penerapan model prediktif berbasis supervised & unsupervised learning, neural network dasar, evaluasi performa algoritma, dan deployment pipeline machine learning.",
+      "Penerapan algoritma kecerdasan buatan berbasis supervised & unsupervised learning, pemodelan neural network fundamental, evaluasi performa metrik model prediktif, serta implementasi pipeline deployment model machine learning terintegrasi. Praktikum ini diselenggarakan pada Semester 7 dengan bobot 3 SKS.",
     date: "Semester 7",
     dateTime: "Sem-7",
   },
