@@ -14,17 +14,11 @@ export function LabRoomsSection() {
             viewport={VIEWPORT}
             className="max-w-3xl"
           >
-            <motion.h2 variants={fadeUp} className="font-semibold text-neutral-500">
-              {labRoomsSection.tag}
-            </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-2 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
+              className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl"
             >
               {labRoomsSection.title}
-            </motion.p>
-            <motion.p variants={fadeUp} className="mt-4 text-neutral-500">
-              {labRoomsSection.description}
             </motion.p>
           </motion.div>
 
@@ -56,10 +50,10 @@ export function LabRoomsSection() {
                     viewport={VIEWPORT}
                     className="mt-6 lg:mt-0"
                   >
-                    <h3 className="text-lg font-medium text-neutral-900">
+                    <h3 className="text-2xl font-medium text-neutral-900">
                       {feature.name}
                     </h3>
-                    <p className="mt-2 text-sm text-neutral-500">
+                    <p className="mt-5 text-lg/normal text-neutral-700">
                       {feature.description}
                     </p>
                   </motion.div>

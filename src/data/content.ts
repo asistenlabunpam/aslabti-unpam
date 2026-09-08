@@ -91,28 +91,56 @@ export const timeline: TimelineItem[] = [
     dateTime: "Sem-2",
   },
   {
-    name: "Basis Data (Database Systems)",
+    name: "Pemrograman",
+    description:
+      "Implementasi struktur data abstrak meliputi linked list, stack, queue, binary tree, dan graph dengan optimasi kompleksitas memori dan waktu.",
+    date: "Semester 2",
+    dateTime: "Sem-2",
+  },
+  {
+    name: "Basis Data",
     description:
       "Perancangan relasi data (ERD, normalisasi), implementasi DDL/DML, query SQL teroptimasi, serta manajemen integritas dan keamanan data.",
     date: "Semester 3",
     dateTime: "Sem-3",
   },
   {
-    name: "Jaringan Komputer & Cloud",
+    name: "Jaringan Komputer",
     description:
       "Penguasaan arsitektur jaringan TCP/IP, subnetting, konfigurasi router & switch, serta implementasi komputasi awan (IaaS, PaaS, SaaS).",
     date: "Semester 4",
     dateTime: "Sem-4",
   },
   {
-    name: "Pemrograman Web Terpadu",
+    name: "Cloud Computing",
+    description:
+      "Penguasaan arsitektur jaringan TCP/IP, subnetting, konfigurasi router & switch, serta implementasi komputasi awan (IaaS, PaaS, SaaS).",
+    date: "Semester 4",
+    dateTime: "Sem-4",
+  },
+  {
+    name: "Pemrograman Web",
     description:
       "Pengembangan aplikasi web responsif dan interaktif berbasis HTML5, modern styling, RESTful API, dan arsitektur backend framework.",
     date: "Semester 5",
     dateTime: "Sem-5",
   },
   {
-    name: "Mobile Programming & Data Mining",
+    name: "Mobile Programming",
+    description:
+      "Pembuatan aplikasi mobile interaktif berbasis Android/Flutter serta ekstraksi pola data berskala besar menggunakan teknik klastering dan klasifikasi.",
+    date: "Semester 6",
+    dateTime: "Sem-6",
+  },
+  {
+    name: "Data Mining",
+    description:
+      "Pembuatan aplikasi mobile interaktif berbasis Android/Flutter serta ekstraksi pola data berskala besar menggunakan teknik klastering dan klasifikasi.",
+    date: "Semester 6",
+    dateTime: "Sem-6",
+  },
+  {
+    name: "Machine Learning",
     description:
       "Pembuatan aplikasi mobile interaktif berbasis Android/Flutter serta ekstraksi pola data berskala besar menggunakan teknik klastering dan klasifikasi.",
     date: "Semester 6",
@@ -131,10 +159,7 @@ export const labDetailsContent = {
 };
 
 export const labRoomsSection = {
-  tag: "Laboratorium Komputasi",
-  title: "Fasilitas Ruangan Laboratorium",
-  description:
-    "Laboratorium Teknik Informatika tersebar di dua lantai strategis Kampus Viktor Universitas Pamulang, dikonfigurasi spesifik sesuai rumpun mata kuliah praktik.",
+  title: "Fasilitas Ruangan Laboratorium Teknik Informatika",
 };
 
 export const labRooms: FeatureItem[] = [
