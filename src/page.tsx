@@ -7,8 +7,11 @@ import {
   ChaptersSection,
   BottomCtaSection,
 } from "@/components/sections";
+import { useLenisScrollSync } from "@/lib/use-lenis-scroll-sync";
 
 export default function Page() {
+  useLenisScrollSync();
+
   return (
     <>
       <HeroSection />
