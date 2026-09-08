@@ -6,24 +6,24 @@ import {
   staggerItem,
   VIEWPORT,
 } from "@/lib/animation";
-import {User} from "lucide-react";
+import { User } from "lucide-react";
 
 export function CoursesSection() {
   return (
     <div className="bg-white space-y-20 py-20">
-      <motion.hgroup
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={VIEWPORT}
-        className="max-w-lg mx-auto text-center"
-      >
-        <h3 className="text-balance text-4xl font-medium tracking-tight sm:text-5xl">
-          {coursesHeading}
-        </h3>
-      </motion.hgroup>
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0">
+        <motion.hgroup
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT}
+          className="max-w-lg mx-auto text-center"
+        >
+          <h3 className="text-balance text-4xl font-medium tracking-tight sm:text-5xl">
+            {coursesHeading}
+          </h3>
+        </motion.hgroup>
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           variants={staggerContainer(0.1, 0.05)}
           initial="hidden"

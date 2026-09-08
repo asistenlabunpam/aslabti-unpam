@@ -3,7 +3,7 @@ import { logo } from "@/constants";
 export function AppFooter() {
   return (
     <footer className="pt-20 w-full">
-      <div className="grid px-4 pb-12 sm:px-6 lg:grid-cols-4 lg:gap-x-8 lg:px-8">
+      <div className="grid px-4 pb-12 max-w-7xl mx-auto sm:px-6 lg:grid-cols-4 lg:gap-x-8 lg:px-8 2xl:px-0">
         <div className="max-w-lg lg:col-span-2">
           <a href="#">
             <span className="sr-only">Asisten Laboratorium Teknik Informatika Universitas Pamulang</span>

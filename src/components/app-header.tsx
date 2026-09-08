@@ -11,8 +11,8 @@ const navigation = [
 
 export function AppHeader() {
   return (
-    <header className="bg-white">
-      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-4 sm:px-6 lg:px-8">
+    <header className="absolute top-0 left-0 z-30 bg-white/50 backdrop-blur-lg w-full">
+      <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">Asisten Laboratorium Teknik Informatika Universitas Pamulang</span>
           <img

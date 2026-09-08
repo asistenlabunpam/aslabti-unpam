@@ -33,7 +33,7 @@ export const heroImages = [
 ];
 
 export const heroContent = {
-  title: "Asisten Laboratorium Teknik Informatika Universitas Pamulang",
+  title: "Asisten Laboratorium Teknik Informatika",
   description:
     "Pusat kegiatan praktikum, bimbingan asistensi akademik, dan eksplorasi teknologi terapan untuk mencetak talenta digital yang unggul, adaptif, dan berdaya saing global.",
 };
@@ -41,9 +41,9 @@ export const heroContent = {
 export const aboutContent = {
   heading: "Dedikasi & Komitmen Laboratorium",
   vision:
-    "Asisten Laboratorium Teknik Informatika Universitas Pamulang berdedikasi menjadi pilar utama pembelajaran praktika komputasi, menjembatani teori perkuliahan dengan implementasi teknologi nyata di dunia industri.",
+    "Asisten Laboratorium Teknik Informatika Universitas Pamulang merupakan entitas garda terdepan dalam mendukung ekosistem akademik berbasis praktika dan riset teknologi. Terdiri dari talenta mahasiswa terpilih melalui seleksi kompetensi yang ketat, tim ini memadukan keunggulan teknis, profesionalisme, serta dedikasi tinggi dalam memfasilitasi kegiatan belajar mengajar di laboratorium.",
   mission:
-    "Mengelola fasilitas komputasi modern di Kampus Viktor (Lt. 6 Gedung A dan Lt. 8 Gedung C), kami mendampingi mahasiswa menguasai logika algoritma, rekayasa perangkat lunak, infrastruktur jaringan, hingga teknologi awan melalui ekosistem praktikum yang terstruktur dan interaktif.",
+    "Berperan sebagai mitra strategis dosen, asisten laboratorium bertindak sebagai fasilitator pembelajaran yang adaptif dalam membimbing mahasiswa dalam pemecahan masalah teknis, penguasaan materi praktikum, serta eksplorasi teknologi mutakhir.",
 };
 
 export const aboutTimeline: AboutTimelineItem[] = [

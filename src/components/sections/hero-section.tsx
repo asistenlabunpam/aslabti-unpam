@@ -5,7 +5,7 @@ import { fadeDown, fadeUp, staggerContainer } from "@/lib/animation";
 
 export function HeroSection() {
   return (
-    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
+    <div className="relative flex w-full items-center justify-center overflow-hidden max-2xl:min-h-dvh h-200">
       <ParallaxHeroImages images={heroImages} variant="edge-focus" />
       <motion.div
         className="relative z-20 mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 text-center"
@@ -15,13 +15,13 @@ export function HeroSection() {
       >
         <motion.h1
           variants={fadeDown}
-          className="text-4xl font-bold tracking-tight text-neutral-800 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] md:text-6xl"
+          className="text-4xl font-semibold tracking-tight text-neutral-800 drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] md:text-7xl"
         >
           {heroContent.title}
         </motion.h1>
         <motion.p
           variants={fadeUp}
-          className="max-w-md text-neutral-600 drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]"
+          className="max-w-3xl text-neutral-600 drop-shadow-[0_0_10px_rgba(255,255,255,0.6)] md:text-lg/relaxed"
         >
           {heroContent.description}
         </motion.p>

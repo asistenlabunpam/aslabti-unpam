@@ -5,7 +5,7 @@ import { fadeUp, VIEWPORT } from "@/lib/animation";
 
 export function BottomCtaSection() {
   return (
-    <div className="relative flex min-h-dvh w-full items-center justify-center py-32 overflow-hidden bg-neutral-50">
+    <div className="relative flex min-h-dvh w-full items-center justify-center py-32 overflow-hidden bg-neutral-50 mt-52">
       <ParallaxHeroImages images={heroImages} />
       <div className="relative z-20 mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 text-center">
         <motion.h1

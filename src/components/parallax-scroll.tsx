@@ -46,9 +46,9 @@ export const ParallaxScroll = ({
   return (
     <div
       ref={containerRef}
-      className={cn("relative w-full py-16 sm:py-24", className)}
+      className={cn("relative w-full", className)}
     >
-      <div className="sticky top-0 left-0 h-screen w-full flex items-center justify-center pointer-events-none z-0 overflow-hidden">
+      <div className="sticky top-0 left-0 h-dvh w-full flex items-center justify-center pointer-events-none z-0 overflow-hidden">
         <motion.div
           style={{
             opacity: textOpacity,

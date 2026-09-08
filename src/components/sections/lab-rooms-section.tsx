@@ -4,9 +4,9 @@ import { fadeLeft, fadeRight, fadeUp, staggerContainer, VIEWPORT } from "@/lib/a
 
 export function LabRoomsSection() {
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-7xl py-24 sm:px-2 sm:py-32 lg:px-4">
-        <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
+    <div className="bg-white w-full">
+      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 2xl:px-0">
+        <div className="mx-auto space-y-16 max-w-2xl px-4 lg:max-w-none">
           <motion.div
             variants={staggerContainer(0.12, 0)}
             initial="hidden"
@@ -14,34 +14,40 @@ export function LabRoomsSection() {
             viewport={VIEWPORT}
             className="max-w-3xl"
           >
-            <motion.p
+            <motion.h2
               variants={fadeUp}
               className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl"
             >
               {labRoomsSection.title}
-            </motion.p>
+            </motion.h2>
           </motion.div>
 
-          <div className="mt-10 space-y-16 border-t border-neutral-200 pt-10 sm:mt-16 sm:pt-16">
+          <div className="space-y-16 border-t border-neutral-200">
             {labRooms.map((feature, index) => {
               const isEven = index % 2 === 0;
               return (
                 <div
                   key={feature.name}
-                  className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-12"
+                  className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16"
                 >
                   <motion.div
                     variants={isEven ? fadeLeft : fadeRight}
                     initial="hidden"
                     whileInView="visible"
                     viewport={VIEWPORT}
-                    className="flex-auto"
+                    className="relative flex-auto rounded-xl overflow-hidden"
                   >
                     <img
                       alt={feature.imageAlt}
                       src={feature.imageSrc}
-                      className="aspect-3/2 w-full rounded-lg bg-neutral-100 object-cover"
+                      loading="lazy"
+                      className="aspect-3/2 w-full bg-neutral-100 object-cover"
                     />
+                    <div className="absolute inset-0 bg-linear-to-t from-neutral-900 via-neutral-900/40" />
+                    <div className="absolute bottom-0 left-0 right-0 flex items-center gap-x-4 p-6">
+                      <div className="w-px h-5 bg-neutral-100 rounded-full opacity-30" />
+                      <h3 className="text-lg font-medium text-neutral-100">{feature.name}</h3>
+                    </div>
                   </motion.div>
                   <motion.div
                     variants={isEven ? fadeRight : fadeLeft}

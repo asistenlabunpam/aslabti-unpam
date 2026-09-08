@@ -157,7 +157,7 @@ export const ParallaxHeroImages = ({
   return (
     <div
       className={cn(
-        "pointer-events-none absolute inset-0 overflow-hidden",
+        "pointer-events-none absolute inset-0 overflow-hidden max-w-7xl mx-auto",
         className,
       )}
     >

@@ -53,7 +53,7 @@ function FeatureColumn({
 export function AboutSection() {
   return (
     <div className="bg-white py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:px-0">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <motion.h2
             variants={fadeLeft}
@@ -147,7 +147,7 @@ export function AboutSection() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
