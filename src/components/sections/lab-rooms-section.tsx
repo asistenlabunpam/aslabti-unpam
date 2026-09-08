@@ -1,6 +1,13 @@
 import { labRoomsSection, labRooms } from "@/data/content";
 import { motion } from "motion/react";
-import { fadeLeft, fadeRight, fadeUp, staggerContainer, VIEWPORT } from "@/lib/animation";
+import {
+  fadeLeft,
+  fadeRight,
+  fadeUp,
+  staggerContainer,
+  staggerItem,
+  VIEWPORT,
+} from "@/lib/animation";
 
 export function LabRoomsSection() {
   return (
@@ -28,7 +35,7 @@ export function LabRoomsSection() {
               return (
                 <div
                   key={feature.name}
-                  className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16"
+                  className="flex flex-col pt-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16"
                 >
                   <motion.div
                     variants={isEven ? fadeLeft : fadeRight}
@@ -36,32 +43,50 @@ export function LabRoomsSection() {
                     whileInView="visible"
                     viewport={VIEWPORT}
                     className="relative flex-auto rounded-xl overflow-hidden"
+                    whileHover={{ scale: 1.01, transition: { duration: 0.35 } }}
                   >
-                    <img
+                    <motion.img
                       alt={feature.imageAlt}
                       src={feature.imageSrc}
                       loading="lazy"
                       className="aspect-3/2 w-full bg-neutral-100 object-cover"
+                      whileHover={{
+                        scale: 1.05,
+                        transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+                      }}
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-neutral-900 via-neutral-900/40" />
                     <div className="absolute bottom-0 left-0 right-0 flex items-center gap-x-4 p-6">
-                      <div className="w-px h-5 bg-neutral-100 rounded-full opacity-30" />
+                      <motion.div
+                        className="w-px h-5 bg-neutral-100 rounded-full"
+                        initial={{ scaleY: 0, opacity: 0 }}
+                        whileInView={{ scaleY: 1, opacity: 0.3 }}
+                        viewport={VIEWPORT}
+                        transition={{ duration: 0.4, delay: 0.3 }}
+                      />
                       <h3 className="text-lg font-medium text-neutral-100">{feature.name}</h3>
                     </div>
                   </motion.div>
+
                   <motion.div
-                    variants={isEven ? fadeRight : fadeLeft}
+                    variants={staggerContainer(0.12, 0.1)}
                     initial="hidden"
                     whileInView="visible"
                     viewport={VIEWPORT}
                     className="mt-6 lg:mt-0"
                   >
-                    <h3 className="text-2xl font-medium text-neutral-900">
+                    <motion.h3
+                      variants={isEven ? fadeRight : fadeLeft}
+                      className="text-2xl font-medium text-neutral-900"
+                    >
                       {feature.name}
-                    </h3>
-                    <p className="mt-5 text-lg/normal text-neutral-700">
+                    </motion.h3>
+                    <motion.p
+                      variants={staggerItem}
+                      className="mt-5 text-lg/normal text-neutral-700"
+                    >
                       {feature.description}
-                    </p>
+                    </motion.p>
                   </motion.div>
                 </div>
               );

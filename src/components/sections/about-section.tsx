@@ -13,6 +13,7 @@ import {
   fadeUp,
   scaleUp,
   staggerContainer,
+  staggerItemLeft,
   VIEWPORT,
 } from "@/lib/animation";
 
@@ -33,13 +34,20 @@ function FeatureColumn({
           whileInView="visible"
           viewport={VIEWPORT}
           custom={i}
-          className="flex min-h-48 flex-col justify-between gap-8 p-6 sm:p-8"
+          whileHover={{ backgroundColor: "rgba(0,0,0,0.02)", transition: { duration: 0.2 } }}
+          className="flex min-h-48 flex-col justify-between gap-8 p-6 sm:p-8 rounded-xl cursor-default"
         >
           <dt className="flex items-start justify-between gap-4">
             <span className="text-lg font-medium">{feature.title}</span>
-            <span className="font-mono text-sm tracking-wide text-neutral-400 tabular-nums dark:text-neutral-500">
+            <motion.span
+              className="font-mono text-sm tracking-wide text-neutral-400 tabular-nums dark:text-neutral-500"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={VIEWPORT}
+              transition={{ duration: 0.4, delay: i * 0.1 + 0.3 }}
+            >
               {feature.number}
-            </span>
+            </motion.span>
           </dt>
           <dd className="max-w-[40ch] text-pretty text-base/7 text-neutral-600 dark:text-neutral-400 sm:text-sm/6">
             {feature.description}
@@ -88,9 +96,18 @@ export function AboutSection() {
             </div>
           </motion.div>
 
-          <div className="mx-auto max-w-2xl space-y-16 overflow-hidden py-20 lg:mx-0 lg:max-w-none">
+          <motion.div
+            variants={staggerContainer(0.14, 0)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT}
+            className="mx-auto max-w-2xl space-y-16 overflow-hidden py-20 lg:mx-0 lg:max-w-none"
+          >
             {aboutTimeline.map((item) => (
-              <div key={item.name}>
+              <motion.div
+                key={item.name}
+                variants={staggerItemLeft}
+              >
                 <div className="flex items-center font-semibold text-neutral-700">
                   <svg
                     viewBox="0 0 4 4"
@@ -111,9 +128,9 @@ export function AboutSection() {
                 <p className="mt-3 leading-7 text-neutral-700 md:text-lg/relaxed">
                   {item.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           <div className="w-full space-y-16 py-20">
             <motion.hgroup

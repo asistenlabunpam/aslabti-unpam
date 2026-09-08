@@ -248,7 +248,7 @@ export function BubbleMenu({
         style={style}
         aria-label="Main navigation"
       >
-        <div
+        <motion.div
           className={[
             "bubble logo-bubble",
             "inline-flex items-center justify-center",
@@ -272,6 +272,11 @@ export function BubbleMenu({
             window.scrollTo({ top: 0, behavior: "smooth" });
             if (isMenuOpen) setIsMenuOpen(false);
           }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          whileHover={{ scale: 1.04, transition: { duration: 0.2 } }}
+          whileTap={{ scale: 0.96, transition: { duration: 0.1 } }}
         >
           <span
             className={[
@@ -296,9 +301,9 @@ export function BubbleMenu({
               logo
             )}
           </span>
-        </div>
+        </motion.div>
 
-        <button
+        <motion.button
           type="button"
           className={[
             "bubble toggle-bubble menu-btn",
@@ -316,6 +321,11 @@ export function BubbleMenu({
           aria-label={menuAriaLabel}
           aria-pressed={isMenuOpen}
           style={{ background: menuBg }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
+          whileTap={{ scale: 0.92, transition: { duration: 0.1 } }}
         >
           <span
             className="menu-line block mx-auto rounded-[2px]"
@@ -338,7 +348,7 @@ export function BubbleMenu({
                 : "none",
             }}
           />
-        </button>
+        </motion.button>
       </nav>
 
       <AnimatePresence>

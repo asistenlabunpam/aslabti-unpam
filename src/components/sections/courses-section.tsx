@@ -35,7 +35,8 @@ export function CoursesSection() {
             <motion.div
               key={item.name}
               variants={staggerItem}
-              className="space-y-8"
+              className="space-y-8 group"
+              whileHover={{ x: 4, transition: { duration: 0.25 } }}
             >
               <div className="flex items-center font-semibold text-neutral-800">
                 <svg
@@ -45,20 +46,31 @@ export function CoursesSection() {
                 >
                   <circle r={2} cx={2} cy={2} fill="currentColor" />
                 </svg>
-                <div className="w-28 h-0.5 bg-neutral-800 rounded-full" />
+                <motion.div
+                  className="h-0.5 bg-neutral-800 rounded-full"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: 112 }}
+                  viewport={VIEWPORT}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                />
                 <div
                   aria-hidden="true"
                   className="absolute -ml-2 h-px w-screen -translate-x-full bg-neutral-900/30 sm:-ml-4 lg:static lg:-mr-6 lg:ml-6 lg:w-auto lg:flex-auto lg:translate-x-0"
                 />
               </div>
+
               <div className="flex items-center gap-x-5">
-                <div className="flex justify-center items-center size-8">
-                  <User />
-                </div>
+                <motion.div
+                  className="flex justify-center items-center size-8 text-neutral-500"
+                  whileHover={{ scale: 1.2, color: "#6366f1", transition: { duration: 0.2 } }}
+                >
+                  <User size={20} />
+                </motion.div>
                 <h3 className="text-lg/8 font-medium tracking-tight text-neutral-900 sm:text-xl lg:text-2xl">
                   {item.name}
                 </h3>
               </div>
+
               <p className="mt-4 leading-7 text-neutral-600 lg:text-lg/relaxed">
                 {item.description}
               </p>
