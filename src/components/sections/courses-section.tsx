@@ -1,6 +1,12 @@
 import { coursesHeading, timeline } from "@/data/content";
 import { motion } from "motion/react";
-import { fadeUp, staggerContainer, staggerItem, VIEWPORT } from "@/lib/animation";
+import {
+  fadeUp,
+  staggerContainer,
+  staggerItem,
+  VIEWPORT,
+} from "@/lib/animation";
+import {User} from "lucide-react";
 
 export function CoursesSection() {
   return (
@@ -26,14 +32,18 @@ export function CoursesSection() {
           className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-x-24 lg:gap-y-20"
         >
           {timeline.map((item) => (
-            <motion.div key={item.name} variants={staggerItem}>
-              <div className="flex items-center text-sm/6 font-semibold text-neutral-600">
+            <motion.div
+              key={item.name}
+              variants={staggerItem}
+              className="space-y-8"
+            >
+              <div className="flex items-center font-semibold text-neutral-800">
                 <svg
                   viewBox="0 0 4 4"
                   aria-hidden="true"
                   className="mr-4 size-1 flex-none"
                 >
-                  <circle r={2} cx={2} fill="currentColor" />
+                  <circle r={2} cx={2} cy={2} fill="currentColor" />
                 </svg>
                 <div className="w-28 h-0.5 bg-neutral-800 rounded-full" />
                 <div
@@ -41,9 +51,14 @@ export function CoursesSection() {
                   className="absolute -ml-2 h-px w-screen -translate-x-full bg-neutral-900/30 sm:-ml-4 lg:static lg:-mr-6 lg:ml-6 lg:w-auto lg:flex-auto lg:translate-x-0"
                 />
               </div>
-              <h3 className="mt-6 text-lg/8 font-semibold tracking-tight text-neutral-900 sm:text-2xl lg:text-3xl">
-                {item.name}
-              </h3>
+              <div className="flex items-center gap-x-5">
+                <div className="flex justify-center items-center size-8">
+                  <User />
+                </div>
+                <h3 className="text-lg/8 font-medium tracking-tight text-neutral-900 sm:text-xl lg:text-2xl">
+                  {item.name}
+                </h3>
+              </div>
               <p className="mt-4 leading-7 text-neutral-600 lg:text-lg/relaxed">
                 {item.description}
               </p>

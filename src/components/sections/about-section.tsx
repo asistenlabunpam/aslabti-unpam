@@ -1,5 +1,6 @@
 import {
   aboutContent,
+  aboutTimeline,
   pillarsHeading,
   leftFeatures,
   rightFeatures,
@@ -15,7 +16,13 @@ import {
   VIEWPORT,
 } from "@/lib/animation";
 
-function FeatureColumn({ features, direction }: { features: NumberedFeature[]; direction: "left" | "right" }) {
+function FeatureColumn({
+  features,
+  direction,
+}: {
+  features: NumberedFeature[];
+  direction: "left" | "right";
+}) {
   return (
     <dl className="grid h-full grid-rows-2 divide-y divide-black/10 dark:divide-white/10">
       {features.map((feature, i) => (
@@ -66,16 +73,49 @@ export function AboutSection() {
             className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row"
           >
             <div className="lg:w-full lg:max-w-6xl lg:flex-auto">
-              <motion.p variants={fadeUp} className="text-2xl/normal text-neutral-800">
+              <motion.p
+                variants={fadeUp}
+                className="text-2xl/normal text-neutral-800"
+              >
                 {aboutContent.vision}
               </motion.p>
-              <motion.p variants={fadeUp} className="mt-10 max-w-5xl text-xl/relaxed text-neutral-700">
+              <motion.p
+                variants={fadeUp}
+                className="mt-10 max-w-5xl text-xl/relaxed text-neutral-700"
+              >
                 {aboutContent.mission}
               </motion.p>
             </div>
           </motion.div>
 
-          <div className="w-full space-y-12 py-20">
+          <div className="mx-auto max-w-2xl space-y-16 overflow-hidden py-20 lg:mx-0 lg:max-w-none">
+            {aboutTimeline.map((item) => (
+              <div key={item.name}>
+                <div className="flex items-center font-semibold text-neutral-800">
+                  <svg
+                    viewBox="0 0 4 4"
+                    aria-hidden="true"
+                    className="mr-4 size-1 flex-none"
+                  >
+                    <circle r={2} cx={2} cy={2} fill="currentColor" />
+                  </svg>
+                  <div className="w-28 h-0.5 bg-neutral-800 rounded-full" />
+                  <div
+                    aria-hidden="true"
+                    className="absolute -ml-2 h-px w-screen -translate-x-full bg-neutral-900/20 sm:-ml-4 lg:static lg:-mr-6 lg:ml-6 lg:w-auto lg:flex-auto lg:translate-x-0"
+                  />
+                </div>
+                <h3 className="text-lg/8 font-medium tracking-tight text-neutral-900 mt-6 sm:text-xl lg:text-2xl">
+                  {item.name}
+                </h3>
+                <p className="mt-3 leading-7 text-neutral-700 md:text-lg/relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="w-full space-y-16 py-20">
             <motion.hgroup
               variants={fadeUp}
               initial="hidden"
@@ -99,7 +139,7 @@ export function AboutSection() {
                 viewport={VIEWPORT}
                 src="https://assets.aceternity.com/screenshots/green-dither-2.webp"
                 alt="Laboratorium Komputasi Teknik Informatika"
-                className="order-1 aspect-4/5 min-h-96 bg-stone-300 dark:bg-neutral-800 lg:order-2 lg:aspect-auto lg:min-h-92"
+                className="order-1 aspect-4/5 min-h-96 bg-stone-300 rounded-2xl dark:bg-neutral-800 lg:order-2 lg:aspect-auto lg:min-h-92"
               />
               <div className="order-3 border-t border-black/10 dark:border-white/10 lg:border-t-0 lg:border-l">
                 <FeatureColumn features={rightFeatures} direction="right" />
