@@ -8,7 +8,7 @@ export function HeroSection() {
     <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
       <ParallaxHeroImages images={heroImages} variant="edge-focus" />
       <motion.div
-        className="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 text-center"
+        className="relative z-20 mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 text-center"
         variants={staggerContainer(0.15, 0.2)}
         initial="hidden"
         animate="visible"

@@ -7,7 +7,7 @@ export function BottomCtaSection() {
   return (
     <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-neutral-50">
       <ParallaxHeroImages images={heroImages} />
-      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 text-center">
+      <div className="relative z-20 mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 text-center">
         <motion.h1
           variants={fadeUp}
           initial="hidden"
