@@ -14,9 +14,9 @@ export function AppHeader() {
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-4 sm:px-6 lg:px-8">
         <a href="#" className="-m-1.5 p-1.5">
-          <span className="sr-only">Your Company</span>
+          <span className="sr-only">Asisten Laboratorium Teknik Informatika Universitas Pamulang</span>
           <img
-            alt=""
+            alt="Logo Aslab TI Universitas Pamulang"
             src={logo}
             className="h-10 w-auto"
           />
