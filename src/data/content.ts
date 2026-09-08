@@ -159,32 +159,32 @@ export const labDetailsContent = {
 };
 
 export const labRoomsSection = {
-  title: "Fasilitas Ruangan Laboratorium Teknik Informatika",
+  title: "Aktivitas Asisten Laboratorium Teknik Informatika",
 };
 
 export const labRooms: FeatureItem[] = [
   {
-    name: "Laboratorium Jaringan & Cloud (Lt. 6 Gedung A)",
+    name: "Kamisan Teknik Informatika",
     description:
       "Ruang Lab 611 dan Lab 612 diperuntukkan bagi praktikum Jaringan Komputer, Sistem Operasi, dan Cloud Computing. Dilengkapi perangkat keras jaringan terintegrasi, router mikrotik, dan workstation simulasi.",
     imageSrc:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop",
+      "https://res.cloudinary.com/dhaonb1vn/image/upload/v1788840450/kamisan-4_tm2f7x.webp",
     imageAlt: "Ruang server dan perangkat jaringan komputer laboratorium.",
   },
   {
-    name: "Laboratorium Rekayasa Perangkat Lunak (Lt. 8 Gedung C)",
+    name: "Asistensi Kelas Mahasiswa Bersama Dosen",
     description:
       "Ruang Lab 775 dan Lab 776 dirancang untuk praktikum Pemrograman Web, Mobile Programming, dan Pemrograman Terstruktur dengan environment software development terstandar.",
     imageSrc:
-      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200&auto=format&fit=crop",
+      "https://res.cloudinary.com/dhaonb1vn/image/upload/v1788840599/asistensi-algoritma-pemrograman_bfiw1x.webp",
     imageAlt: "Ruang komputer praktikum pemrograman perangkat lunak.",
   },
   {
-    name: "Laboratorium Sains Data & Basis Data (Lt. 8 Gedung C)",
+    name: "Bootcamp & Pengembangan Skill Asisten Laboratorium",
     description:
       "Ruang Lab 782 difasilitasi perangkat komputasi analitik untuk mendukung mata kuliah Basis Data, Algoritma Pemrograman, dan Data Mining dalam pengolahan data volume besar.",
     imageSrc:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
+      "https://res.cloudinary.com/dhaonb1vn/image/upload/v1788840693/bootcamp-mobile-programming_zbnp7b.webp",
     imageAlt: "Workstation analisis data dan praktikum komputasi cerdas.",
   },
 ];

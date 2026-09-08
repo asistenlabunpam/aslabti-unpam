@@ -38,8 +38,8 @@ export function LabDetailsSection() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={VIEWPORT}
-                alt="Workstation laboratorium teknik informatika"
-                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1170&auto=format&fit=crop"
+                alt="Ruang Laboratorium Jaringan Komputer"
+                src="https://res.cloudinary.com/dhaonb1vn/image/upload/v1788840278/lab_networking_ujdysp.webp"
                 className="aspect-3/2 w-full rounded-lg object-cover"
               />
               <p className="mt-8 text-base text-neutral-500">
@@ -58,8 +58,8 @@ export function LabDetailsSection() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={VIEWPORT}
-                alt="Bimbingan dan asistensi praktikum mahasiswa"
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1170&auto=format&fit=crop"
+                alt="Ruang Laboratorium Komputer"
+                src="https://res.cloudinary.com/dhaonb1vn/image/upload/v1788840051/lab_computer_vgmiua.jpg"
                 className="aspect-3/2 w-full rounded-lg object-cover"
               />
               <p className="mt-8 text-base text-neutral-500">
