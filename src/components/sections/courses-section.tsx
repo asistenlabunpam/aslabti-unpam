@@ -10,7 +10,7 @@ import { User } from "lucide-react";
 
 export function CoursesSection() {
   return (
-    <div className="bg-white space-y-20 py-20">
+    <div id="mata-kuliah" className="bg-white space-y-20 py-20">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0">
         <motion.hgroup
           variants={fadeUp}

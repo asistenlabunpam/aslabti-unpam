@@ -52,7 +52,7 @@ function FeatureColumn({
 
 export function AboutSection() {
   return (
-    <div className="bg-white py-32">
+    <div id="tentang" className="bg-white py-32">
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:px-0">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <motion.h2
@@ -91,7 +91,7 @@ export function AboutSection() {
           <div className="mx-auto max-w-2xl space-y-16 overflow-hidden py-20 lg:mx-0 lg:max-w-none">
             {aboutTimeline.map((item) => (
               <div key={item.name}>
-                <div className="flex items-center font-semibold text-neutral-800">
+                <div className="flex items-center font-semibold text-neutral-700">
                   <svg
                     viewBox="0 0 4 4"
                     aria-hidden="true"
@@ -99,10 +99,10 @@ export function AboutSection() {
                   >
                     <circle r={2} cx={2} cy={2} fill="currentColor" />
                   </svg>
-                  <div className="w-28 h-0.5 bg-neutral-800 rounded-full" />
+                  <div className="w-28 h-0.5 bg-neutral-700 rounded-full" />
                   <div
                     aria-hidden="true"
-                    className="absolute -ml-2 h-px w-screen -translate-x-full bg-neutral-900/20 sm:-ml-4 lg:static lg:-mr-6 lg:ml-6 lg:w-auto lg:flex-auto lg:translate-x-0"
+                    className="absolute -ml-2 h-px w-screen -translate-x-full bg-neutral-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-6 lg:w-auto lg:flex-auto lg:translate-x-0"
                   />
                 </div>
                 <h3 className="text-lg/8 font-medium tracking-tight text-neutral-900 mt-6 sm:text-xl lg:text-2xl">

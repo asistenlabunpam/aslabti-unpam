@@ -5,7 +5,7 @@ import { fadeDown, fadeUp, staggerContainer } from "@/lib/animation";
 
 export function HeroSection() {
   return (
-    <div className="relative flex w-full items-center justify-center overflow-hidden max-2xl:min-h-dvh h-200">
+    <div id="beranda" className="relative flex w-full items-center justify-center overflow-hidden max-2xl:min-h-dvh h-200">
       <ParallaxHeroImages images={heroImages} variant="edge-focus" />
       <motion.div
         className="relative z-20 mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 text-center"

@@ -45,6 +45,7 @@ export const ParallaxScroll = ({
 
   return (
     <div
+      id="galeri"
       ref={containerRef}
       className={cn("relative w-full", className)}
     >
@@ -57,10 +58,10 @@ export const ParallaxScroll = ({
           }}
           className="flex flex-col items-center justify-center text-center px-4 select-none"
         >
-          <span className="font-semibold tracking-[0.35em] uppercase mb-3 drop-shadow-sm opacity-20">
+          <span className="font-semibold tracking-[0.35em] uppercase mb-3 drop-shadow-sm opacity-15">
             Dokumentasi & Portofolio
           </span>
-          <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter font-[helvetica] uppercase leading-none select-none opacity-20">
+          <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter font-[helvetica] uppercase leading-none select-none opacity-15">
             ASLAB GALLERY
           </h2>
         </motion.div>
