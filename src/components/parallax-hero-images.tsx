@@ -29,8 +29,8 @@ const positionStyles: Record<
   ImagePosition["position"],
   { top: string; left?: string; right?: string }
 > = {
-  "top-left": { top: "8%", left: "4%" },
-  "top-right": { top: "8%", right: "4%" },
+  "top-left": { top: "5%", left: "4%" },
+  "top-right": { top: "8%", right: "5%" },
   "mid-left": { top: "38%", left: "6%" },
   "mid-right": { top: "38%", right: "6%" },
   "bottom-left": { top: "68%", left: "4%" },
@@ -180,7 +180,7 @@ const ParallaxImage = memo(function ParallaxImage({
         loading="lazy"
         decoding="async"
         className={cn(
-          "aspect-4/3 h-20 w-32 rounded-lg object-cover shadow-sm ring-1 ring-black/10 sm:h-40 sm:w-56 md:h-52 md:w-80 dark:ring-white/10",
+          "aspect-4/3 h-14 w-24 rounded-lg object-cover shadow-sm ring-1 ring-black/10 sm:h-40 sm:w-56 md:h-52 md:w-80 dark:ring-white/10",
           imageClassName,
         )}
       />

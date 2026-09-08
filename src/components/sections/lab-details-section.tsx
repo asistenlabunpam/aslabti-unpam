@@ -1,25 +1,43 @@
 import { labDetailsContent } from "@/data/content";
+import { motion } from "motion/react";
+import { fadeLeft, fadeRight, fadeUp, scaleUp, staggerContainer, VIEWPORT } from "@/lib/animation";
 
 export function LabDetailsSection() {
   return (
     <div className="bg-neutral-50">
       <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
         <section aria-labelledby="details-heading">
-          <div className="flex flex-col items-center text-center">
-            <h2
+          <motion.div
+            variants={staggerContainer(0.15, 0)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT}
+            className="flex flex-col items-center text-center"
+          >
+            <motion.h2
+              variants={fadeUp}
               id="details-heading"
               className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl"
             >
               {labDetailsContent.heading}
-            </h2>
-            <p className="mt-3 max-w-3xl text-lg text-neutral-600">
+            </motion.h2>
+            <motion.p variants={fadeUp} className="mt-3 max-w-3xl text-lg text-neutral-600">
               {labDetailsContent.description}
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           <div className="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
-            <div>
-              <img
+            <motion.div
+              variants={fadeLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT}
+            >
+              <motion.img
+                variants={scaleUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={VIEWPORT}
                 alt="Workstation laboratorium teknik informatika"
                 src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1170&auto=format&fit=crop"
                 className="aspect-3/2 w-full rounded-lg object-cover"
@@ -27,9 +45,19 @@ export function LabDetailsSection() {
               <p className="mt-8 text-base text-neutral-500">
                 {labDetailsContent.box1Text}
               </p>
-            </div>
-            <div>
-              <img
+            </motion.div>
+
+            <motion.div
+              variants={fadeRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT}
+            >
+              <motion.img
+                variants={scaleUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={VIEWPORT}
                 alt="Bimbingan dan asistensi praktikum mahasiswa"
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1170&auto=format&fit=crop"
                 className="aspect-3/2 w-full rounded-lg object-cover"
@@ -37,7 +65,7 @@ export function LabDetailsSection() {
               <p className="mt-8 text-base text-neutral-500">
                 {labDetailsContent.box2Text}
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>

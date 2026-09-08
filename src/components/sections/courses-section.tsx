@@ -1,17 +1,32 @@
 import { coursesHeading, timeline } from "@/data/content";
+import { motion } from "motion/react";
+import { fadeUp, staggerContainer, staggerItem, VIEWPORT } from "@/lib/animation";
 
 export function CoursesSection() {
   return (
     <div className="bg-white space-y-20 py-20">
-      <hgroup className="max-w-lg mx-auto text-center">
+      <motion.hgroup
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={VIEWPORT}
+        className="max-w-lg mx-auto text-center"
+      >
         <h3 className="text-balance text-4xl font-medium tracking-tight sm:text-5xl">
           {coursesHeading}
         </h3>
-      </hgroup>
+      </motion.hgroup>
+
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-x-24 lg:gap-y-20">
+        <motion.div
+          variants={staggerContainer(0.1, 0.05)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT}
+          className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-x-24 lg:gap-y-20"
+        >
           {timeline.map((item) => (
-            <div key={item.name}>
+            <motion.div key={item.name} variants={staggerItem}>
               <div className="flex items-center text-sm/6 font-semibold text-neutral-600">
                 <svg
                   viewBox="0 0 4 4"
@@ -32,9 +47,9 @@ export function CoursesSection() {
               <p className="mt-4 leading-7 text-neutral-600 lg:text-lg/relaxed">
                 {item.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
