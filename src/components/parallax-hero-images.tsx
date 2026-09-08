@@ -247,7 +247,7 @@ const ParallaxImage = memo(function ParallaxImage({
     >
       <div
         className={cn(
-          "group relative overflow-hidden rounded-2xl bg-neutral-50/80 p-1.5 shadow-xl shadow-neutral-900/8 ring-1 ring-neutral-950/10 backdrop-blur-sm transition-all duration-300 hover:bg-neutral-50 hover:shadow-2xl hover:shadow-neutral-900/15 hover:ring-neutral-900/20",
+          "group relative overflow-hidden rounded-2xl bg-neutral-50/80 p-1 shadow-xl shadow-neutral-900/8 ring-1 ring-neutral-950/10 backdrop-blur-sm transition-all duration-300 hover:bg-neutral-50 hover:shadow-2xl hover:shadow-neutral-900/15 hover:ring-neutral-900/20",
           config.sizeClasses,
         )}
       >

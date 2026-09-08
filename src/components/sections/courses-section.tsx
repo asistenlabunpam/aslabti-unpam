@@ -10,7 +10,7 @@ import { User } from "lucide-react";
 
 export function CoursesSection() {
   return (
-    <div id="mata-kuliah" className="bg-white space-y-20 py-20">
+    <div id="mata-kuliah" className="bg-white space-y-20 py-20 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:px-0">
         <motion.hgroup
           variants={fadeUp}
@@ -38,7 +38,7 @@ export function CoursesSection() {
               className="space-y-8 group"
               whileHover={{ x: 4, transition: { duration: 0.25 } }}
             >
-              <div className="flex items-center font-semibold text-neutral-800">
+              <div className="relative flex items-center font-semibold text-neutral-800">
                 <svg
                   viewBox="0 0 4 4"
                   aria-hidden="true"

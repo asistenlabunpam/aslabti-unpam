@@ -60,7 +60,7 @@ function FeatureColumn({
 
 export function AboutSection() {
   return (
-    <div id="tentang" className="bg-white py-32">
+    <div id="tentang" className="bg-white py-32 overflow-hidden">
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:px-0">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <motion.h2
@@ -108,7 +108,7 @@ export function AboutSection() {
                 key={item.name}
                 variants={staggerItemLeft}
               >
-                <div className="flex items-center font-semibold text-neutral-700">
+                <div className="relative flex items-center font-semibold text-neutral-700">
                   <svg
                     viewBox="0 0 4 4"
                     aria-hidden="true"

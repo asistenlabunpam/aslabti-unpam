@@ -11,7 +11,7 @@ import {
 
 export function LabRoomsSection() {
   return (
-    <div id="aktivitas" className="bg-white w-full">
+    <div id="aktivitas" className="bg-white w-full overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 2xl:px-0">
         <div className="mx-auto space-y-16 max-w-2xl px-4 lg:max-w-none">
           <motion.div
