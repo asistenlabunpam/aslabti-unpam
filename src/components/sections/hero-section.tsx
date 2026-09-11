@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <div
       id="beranda"
-      className="relative flex w-full items-center justify-center overflow-hidden min-h-dvh 2xl:h-200"
+      className="relative flex w-full items-center justify-center overflow-hidden bg-linear-to-b from-blue-400 to-65% to-transparent min-h-dvh 2xl:h-200"
     >
       <ParallaxHeroImages images={heroImages} variant="edge-focus" />
       <motion.div

@@ -1,7 +1,7 @@
 import { ParallaxHeroImages } from "@/components/parallax-hero-images";
 import { bottomCta, heroImages } from "@/data/content";
 import { motion } from "motion/react";
-import { fadeUp, fadeDown, staggerContainer, VIEWPORT } from "@/lib/animation";
+import { fadeUp, staggerContainer, VIEWPORT } from "@/lib/animation";
 
 export function BottomCtaSection() {
   return (

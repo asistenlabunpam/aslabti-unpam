@@ -213,12 +213,12 @@ export function AppFooter() {
           </div>
           <div className="flex items-center gap-x-6">
             <a
-              href="https://virtual-tour-unpam.netlify.app/"
+              href="https://filkom.unpam.ac.id/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-neutral-900 transition-colors"
             >
-              Virtual Tour
+              filkom.unpam.ac.id
             </a>
             <a
               href="https://satu.unpam.ac.id"

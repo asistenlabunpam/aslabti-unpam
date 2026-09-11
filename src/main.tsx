@@ -18,7 +18,7 @@ createRoot(document.getElementById("root")!).render(
       }}
     >
       <AppHeader />
-      <main className="px-4 sm:px-6 lg:px-8">
+      <main className="">
         <Page />
       </main>
       <AppFooter />
