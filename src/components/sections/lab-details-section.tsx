@@ -1,8 +1,20 @@
 import { labDetailsContent } from "@/data/content";
 import { motion } from "motion/react";
-import { fadeLeft, fadeRight, fadeUp, scaleUp, staggerContainer, VIEWPORT } from "@/lib/animation";
+import {
+  fadeLeft,
+  fadeRight,
+  fadeUp,
+  scaleUp,
+  staggerContainer,
+  useParallaxY,
+  VIEWPORT,
+} from "@/lib/animation";
 
 export function LabDetailsSection() {
+  // Opposing parallax: left image drifts up, right image drifts down
+  const { ref: leftRef, y: leftY } = useParallaxY([-30, 30]);
+  const { ref: rightRef, y: rightY } = useParallaxY([30, -30]);
+
   return (
     <div className="bg-neutral-50 overflow-hidden">
       <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 2xl:px-0">
@@ -27,7 +39,10 @@ export function LabDetailsSection() {
           </motion.div>
 
           <div className="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
+            {/* Left box — parallax drifts up */}
             <motion.div
+              ref={leftRef}
+              style={{ y: leftY }}
               variants={fadeLeft}
               initial="hidden"
               whileInView="visible"
@@ -48,7 +63,10 @@ export function LabDetailsSection() {
               </p>
             </motion.div>
 
+            {/* Right box — parallax drifts down */}
             <motion.div
+              ref={rightRef}
+              style={{ y: rightY }}
               variants={fadeRight}
               initial="hidden"
               whileInView="visible"

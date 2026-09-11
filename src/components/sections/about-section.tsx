@@ -14,6 +14,7 @@ import {
   scaleUp,
   staggerContainer,
   staggerItemLeft,
+  useParallaxY,
   VIEWPORT,
 } from "@/lib/animation";
 
@@ -59,11 +60,18 @@ function FeatureColumn({
 }
 
 export function AboutSection() {
+  // Parallax: heading slides up slower than scroll; center image drifts down
+  const { ref: headingRef, y: headingY } = useParallaxY([-20, 20]);
+  const { ref: imgRef, y: imgY } = useParallaxY([-50, 50]);
+
   return (
     <div id="tentang" className="bg-white py-32 overflow-hidden">
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:px-0">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+          {/* Parallax heading */}
           <motion.h2
+            ref={headingRef as React.RefObject<HTMLHeadingElement>}
+            style={{ y: headingY }}
             variants={fadeLeft}
             initial="hidden"
             whileInView="visible"
@@ -149,15 +157,24 @@ export function AboutSection() {
               <div className="order-2 border-black/10 dark:border-white/10 lg:order-1 lg:border-r">
                 <FeatureColumn features={leftFeatures} direction="left" />
               </div>
-              <motion.img
-                variants={scaleUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={VIEWPORT}
-                src="https://assets.aceternity.com/screenshots/green-dither-2.webp"
-                alt="Laboratorium Komputasi Teknik Informatika"
-                className="order-1 aspect-4/5 min-h-96 bg-stone-300 rounded-2xl dark:bg-neutral-800 lg:order-2 lg:aspect-auto lg:min-h-92"
-              />
+
+              {/* Parallax center image — drifts vertically as user scrolls */}
+              <motion.div
+                ref={imgRef}
+                style={{ y: imgY }}
+                className="order-1 lg:order-2"
+              >
+                <motion.img
+                  variants={scaleUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={VIEWPORT}
+                  src="https://assets.aceternity.com/screenshots/green-dither-2.webp"
+                  alt="Laboratorium Komputasi Teknik Informatika"
+                  className="aspect-4/5 min-h-96 bg-stone-300 rounded-2xl dark:bg-neutral-800 w-full object-cover lg:aspect-auto lg:min-h-92"
+                />
+              </motion.div>
+
               <div className="order-3 border-t border-black/10 dark:border-white/10 lg:border-t-0 lg:border-l">
                 <FeatureColumn features={rightFeatures} direction="right" />
               </div>
