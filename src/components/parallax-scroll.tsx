@@ -47,8 +47,9 @@ export const ParallaxScroll = ({
     <div
       id="galeri"
       ref={containerRef}
-      className={cn("relative w-full", className)}
+      className={cn("relative w-full bg-linear-to-b from-blue-400 to-transparent", className)}
     >
+      <div className="from-neutral-50 pointer-events-none absolute inset-x-0 top-0 z-3 w-full h-20 bg-linear-to-b" />
       <div className="sticky top-0 left-0 h-dvh w-full flex items-center justify-center pointer-events-none z-0 overflow-hidden">
         <motion.div
           style={{
@@ -58,10 +59,10 @@ export const ParallaxScroll = ({
           }}
           className="flex flex-col items-center justify-center text-center px-4 select-none"
         >
-          <span className="font-semibold tracking-[0.35em] uppercase mb-3 drop-shadow-sm opacity-15">
+          <span className="font-semibold tracking-[0.35em] uppercase mb-3 drop-shadow-sm opacity-5">
             Dokumentasi & Portofolio
           </span>
-          <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter font-[helvetica] uppercase leading-none select-none opacity-15">
+          <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter font-[helvetica] uppercase leading-none select-none opacity-5">
             ASLAB GALLERY
           </h2>
         </motion.div>

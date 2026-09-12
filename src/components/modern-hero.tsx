@@ -70,7 +70,7 @@ const CenterImage = () => {
 
 const ParallaxImages = () => {
   return (
-    <div className="mx-auto max-w-5xl px-4 pt-[200px]">
+    <div className="mx-auto max-w-5xl px-4 pt-50">
       <ParallaxImg
         src="https://cdn.21st.dev/assets/mirror/68/68fd4edf19855762d0020e6ddbf3fdd31b7f768a6c65014d50ec6b36ef305b54.jpg"
         alt="And example of a space launch"

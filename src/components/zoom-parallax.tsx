@@ -38,7 +38,7 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
 	const scales = [scale4, scale5, scale6, scale5, scale6, scale8, scale9];
 
 	return (
-		<div ref={container} className="relative h-[300vh]">
+		<div ref={container} className="relative h-[300dvh]">
 			<div className="sticky top-0 h-dvh w-full overflow-hidden">
 				{images.map(({ src, alt }, index) => {
 					const scale = scales[index % scales.length];
@@ -52,7 +52,7 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
 								zIndex: config.zIndex,
 								willChange: 'transform',
 							}}
-							className="absolute top-0 left-0 flex h-full w-full items-center justify-center pointer-events-none transform-gpu"
+							className="absolute top-0 left-0 flex size-full items-center justify-center pointer-events-none transform-gpu"
 						>
 							<div
 								style={{
@@ -67,7 +67,7 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
 								<img
 									src={src || '/placeholder.svg'}
 									alt={alt || `Parallax image ${index + 1}`}
-									className="h-full w-full object-cover select-none"
+									className="size-full object-cover select-none"
 									loading="lazy"
 								/>
 							</div>

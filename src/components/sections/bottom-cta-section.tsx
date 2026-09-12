@@ -2,6 +2,7 @@ import { ParallaxHeroImages } from "@/components/parallax-hero-images";
 import { bottomCta, heroImages } from "@/data/content";
 import { motion } from "motion/react";
 import { fadeUp, staggerContainer, VIEWPORT } from "@/lib/animation";
+import { PrimaryButton } from "../primary-button";
 
 export function BottomCtaSection() {
   return (
@@ -29,35 +30,7 @@ export function BottomCtaSection() {
           Wujudkan potensi terbaikmu di lingkungan laboratorium yang mendukung, bersama tim asisten yang berdedikasi dan inovatif.
         </motion.p>
 
-        <motion.a
-          href="#tentang"
-          variants={fadeUp}
-          className="mt-2 inline-flex items-center gap-x-2 rounded-full bg-neutral-900 px-8 py-3.5 text-sm font-semibold text-white shadow-lg"
-          whileHover={{
-            scale: 1.04,
-            backgroundColor: "#312e81",
-            transition: { duration: 0.2 },
-          }}
-          whileTap={{ scale: 0.97, transition: { duration: 0.1 } }}
-          onClick={(e) => {
-            e.preventDefault();
-            document.getElementById("tentang")?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Pelajari Lebih Lanjut
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="size-4"
-          >
-            <path
-              fillRule="evenodd"
-              d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </motion.a>
+        <PrimaryButton text="Lebih Dekat" />
       </motion.div>
     </div>
   );

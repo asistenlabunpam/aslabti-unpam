@@ -77,20 +77,20 @@ function ZoomParallaxSection() {
   const { ref, y } = useParallaxY([-24, 24]);
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full bg-linear-to-b from-blue-400 to-transparent">
+      <div className="from-neutral-50 pointer-events-none absolute inset-x-0 top-0 z-3 w-full h-20 bg-linear-to-b" />
       <div className="relative flex h-[35vh] sm:h-[45vh] items-center justify-center overflow-hidden">
         <div
           aria-hidden="true"
           className={cn(
             "pointer-events-none absolute -top-1/2 left-1/2 h-[120vmin] w-[120vmin] -translate-x-1/2 rounded-full",
-            "bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.06),transparent_60%)]",
             "blur-[30px]",
           )}
         />
         <motion.h2
           ref={ref as React.RefObject<HTMLHeadingElement>}
           style={{ y }}
-          className="relative z-10 text-center text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900"
+          className="relative z-10 text-center text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-neutral-100"
         >
           Lorem Ipsum Dolor Sit Amet
         </motion.h2>
