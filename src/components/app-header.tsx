@@ -153,11 +153,9 @@ export function BubbleMenu({
     e: React.MouseEvent<HTMLAnchorElement>,
     item: MenuItem,
   ) => {
-    // 1. Trigger animated exit
     setIsMenuOpen(false);
     onMenuClick?.(false);
 
-    // 2. Resolve link target
     let target = item.href;
     if (!target || target === "#" || target === "") {
       const lower = item.label.toLowerCase();
@@ -257,7 +255,7 @@ export function BubbleMenu({
             "shadow-[0_4px_16px_rgba(0,0,0,0.12)]",
             "pointer-events-auto",
             "h-12 md:h-14",
-            "px-3",
+            "px-2",
             "gap-2",
             "will-change-transform",
             "cursor-pointer",
@@ -282,7 +280,7 @@ export function BubbleMenu({
             className={[
               "logo-content",
               "inline-flex items-center justify-center",
-              "w-[120px] h-full",
+              "w-24 h-full",
             ].join(" ")}
             style={
               {
@@ -295,6 +293,7 @@ export function BubbleMenu({
               <img
                 src={logo}
                 alt="Logo"
+                loading="lazy"
                 className="bubble-logo max-h-[60%] max-w-full object-contain block"
               />
             ) : (
@@ -313,7 +312,7 @@ export function BubbleMenu({
             "bg-white",
             "shadow-[0_4px_16px_rgba(0,0,0,0.12)]",
             "pointer-events-auto",
-            "w-12 h-12 md:w-14 md:h-14",
+            "size-12 md:size-14",
             "border-0 cursor-pointer p-0",
             "will-change-transform",
           ].join(" ")}
@@ -328,7 +327,7 @@ export function BubbleMenu({
           whileTap={{ scale: 0.92, transition: { duration: 0.1 } }}
         >
           <span
-            className="menu-line block mx-auto rounded-[2px]"
+            className="menu-line block mx-auto rounded-xs"
             style={{
               width: 26,
               height: 2,
@@ -337,7 +336,7 @@ export function BubbleMenu({
             }}
           />
           <span
-            className="menu-line short block mx-auto rounded-[2px]"
+            className="menu-line short block mx-auto rounded-xs"
             style={{
               marginTop: "6px",
               width: 26,
@@ -360,7 +359,7 @@ export function BubbleMenu({
               useFixedPosition ? "fixed" : "absolute",
               "inset-0",
               "flex items-center justify-center",
-              "z-[1000]",
+              "z-1000",
               "bg-black/10 backdrop-blur-[2px]",
             ].join(" ")}
             aria-hidden={!isMenuOpen}
@@ -399,7 +398,7 @@ export function BubbleMenu({
                     className={[
                       "pill-col",
                       "flex justify-center items-stretch",
-                      "[flex:0_0_calc(100%/3)]",
+                      "flex-[0_0_calc(100%/3)]",
                       "box-border",
                     ].join(" ")}
                   >

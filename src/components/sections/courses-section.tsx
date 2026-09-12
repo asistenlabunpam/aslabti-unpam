@@ -109,7 +109,6 @@ export function CoursesSection() {
                   className="h-0.5 bg-neutral-800 rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: 112 }}
-                  viewport={VIEWPORT}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
                 />
                 <div

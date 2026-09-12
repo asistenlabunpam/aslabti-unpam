@@ -6,8 +6,7 @@ import {
   useMotionTemplate,
   useScroll,
   useTransform,
-} from "framer-motion";
-import { Pin } from "lucide-react";
+} from "motion/react";
 
 export const SmoothScrollHero = () => {
   return (
@@ -142,33 +141,30 @@ const Schedule = () => {
       >
         Frequently Asked Questions
       </motion.h1>
-      <ScheduleItem title="NG-21" date="Dec 9th" location="Florida" />
-      <ScheduleItem title="Starlink" date="Dec 20th" location="Texas" />
-      <ScheduleItem title="Starlink" date="Jan 13th" location="Florida" />
-      <ScheduleItem title="Turksat 6A" date="Feb 22nd" location="Florida" />
-      <ScheduleItem title="NROL-186" date="Mar 1st" location="California" />
-      <ScheduleItem title="GOES-U" date="Mar 8th" location="California" />
-      <ScheduleItem title="ASTRA 1P" date="Apr 8th" location="Texas" />
+      
+      <div className="space-y-9 divide-y divide-neutral-300">
+        <ScheduleItem title="NG-21" date="Dec 9th" />
+        <ScheduleItem title="Starlink" date="Dec 20th" />
+        <ScheduleItem title="Starlink" date="Jan 13th" />
+        <ScheduleItem title="Turksat 6A" date="Feb 22nd" />
+        <ScheduleItem title="NROL-186" date="Mar 1st" />
+        <ScheduleItem title="GOES-U" date="Mar 8th" />
+        <ScheduleItem title="ASTRA 1P" date="Apr 8th" />
+      </div>
     </section>
   );
 };
 
-const ScheduleItem = ({ title, date, location }: { title: string; date: string; location: string }) => {
+const ScheduleItem = ({ title, date }: { title: string; date: string; }) => {
   return (
     <motion.div
       initial={{ y: 48, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
-      className="mb-9 flex items-center justify-between border-b border-neutral-300 px-3 pb-9"
+      className="pb-9"
     >
-      <div>
-        <p className="mb-1.5 text-xl text-neutral-950">{title}</p>
-        <p className="text-sm uppercase text-neutral-800">{date}</p>
-      </div>
-      <div className="flex items-center gap-1.5 text-end text-sm uppercase text-neutral-700">
-        <p>{location}</p>
-        <Pin />
-      </div>
+      <p className="mb-1.5 text-xl text-neutral-950">{title}</p>
+      <p className="text-sm uppercase text-neutral-800">{date}</p>
     </motion.div>
   );
 };

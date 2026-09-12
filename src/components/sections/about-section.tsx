@@ -35,7 +35,10 @@ function FeatureColumn({
           whileInView="visible"
           viewport={VIEWPORT}
           custom={i}
-          whileHover={{ backgroundColor: "rgba(0,0,0,0.02)", transition: { duration: 0.2 } }}
+          whileHover={{
+            backgroundColor: "rgba(0,0,0,0.02)",
+            transition: { duration: 0.2 },
+          }}
           className="flex min-h-48 flex-col justify-between gap-8 p-6 sm:p-8 rounded-xl cursor-default"
         >
           <dt className="flex items-start justify-between gap-4">
@@ -60,7 +63,6 @@ function FeatureColumn({
 }
 
 export function AboutSection() {
-  // Parallax: heading slides up slower than scroll; center image drifts down
   const { ref: headingRef, y: headingY } = useParallaxY([-20, 20]);
   const { ref: imgRef, y: imgY } = useParallaxY([-50, 50]);
 
@@ -68,7 +70,6 @@ export function AboutSection() {
     <div id="tentang" className="bg-white py-32 overflow-hidden">
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:px-0">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          {/* Parallax heading */}
           <motion.h2
             ref={headingRef as React.RefObject<HTMLHeadingElement>}
             style={{ y: headingY }}
@@ -112,10 +113,7 @@ export function AboutSection() {
             className="mx-auto max-w-2xl space-y-20 overflow-hidden py-20 lg:mx-0 lg:max-w-none"
           >
             {aboutTimeline.map((item) => (
-              <motion.div
-                key={item.name}
-                variants={staggerItemLeft}
-              >
+              <motion.div key={item.name} variants={staggerItemLeft}>
                 <div className="relative flex items-center font-semibold text-neutral-700">
                   <svg
                     viewBox="0 0 4 4"
@@ -124,7 +122,16 @@ export function AboutSection() {
                   >
                     <circle r={2} cx={2} cy={2} fill="currentColor" />
                   </svg>
-                  <div className="w-28 h-0.5 bg-neutral-700 rounded-full" />
+                  <motion.div
+                    className="h-0.5 bg-neutral-800 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 112 }}
+                    transition={{
+                      duration: 0.5,
+                      ease: [0.22, 1, 0.36, 1],
+                      delay: 0.2,
+                    }}
+                  />
                   <div
                     aria-hidden="true"
                     className="absolute -ml-2 h-px w-screen -translate-x-full bg-neutral-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-6 lg:w-auto lg:flex-auto lg:translate-x-0"
@@ -158,7 +165,6 @@ export function AboutSection() {
                 <FeatureColumn features={leftFeatures} direction="left" />
               </div>
 
-              {/* Parallax center image — drifts vertically as user scrolls */}
               <motion.div
                 ref={imgRef}
                 style={{ y: imgY }}

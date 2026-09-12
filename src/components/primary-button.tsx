@@ -19,7 +19,7 @@ export function PrimaryButton({
         className,
       )}
     >
-      <div className="flex items-center justify-center gap-3 pl-7 p-2 bg-blue-500 rounded-full shadow-md shadow-blue-500/50">
+      <div className="flex items-center justify-center gap-3 pl-7 p-2 bg-blue-500 rounded-full shadow-lg shadow-blue-500/40">
         <span
           className="text-lg text-neutral-100 transition-colors duration-100 ease-in-out"
         >

@@ -19,7 +19,7 @@ function ScrollIndicator() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.6, duration: 0.6 }}
-      className="absolute left-1/2 bottom-4 sm:bottom-5 -translate-x-1/2 flex flex-col items-center gap-y-2 cursor-pointer group"
+      className="absolute left-1/2 bottom-3 sm:bottom-4 -translate-x-1/2 flex flex-col items-center gap-y-2 cursor-pointer group"
       onClick={() =>
         document.getElementById("tentang")?.scrollIntoView({ behavior: "smooth" })
       }
@@ -132,7 +132,7 @@ export function HeroSection() {
 
           <motion.div
             variants={fadeUp}
-            className="mt-2 flex flex-wrap items-center justify-center gap-3"
+            className="my-2 flex flex-wrap items-center justify-center gap-3"
           >
             <PrimaryButton text="Tentang Kami" />
             <SecondaryButton text="Lihat Galeri" />
@@ -143,14 +143,13 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-2 flex items-center divide-x divide-neutral-300"
         >
           <div className="flex overflow-x-auto">
-            <div className="mx-auto flex gap-x-8 py-3 whitespace-nowrap lg:gap-x-10">
+            <div className="mx-auto flex py-3 whitespace-nowrap divide-x divide-neutral-300">
               {incentives.map((incentive) => (
-                <div key={incentive.name} className="flex items-center text-sm font-medium text-neutral-500">
+                <div key={incentive.name} className="flex items-center text-sm font-medium text-neutral-500 px-5">
                   <incentive.icon aria-hidden="true" className="mr-2 size-4 flex-none" />
-                  <p>{incentive.name}</p>
+                  <span>{incentive.name}</span>
                 </div>
               ))}
             </div>

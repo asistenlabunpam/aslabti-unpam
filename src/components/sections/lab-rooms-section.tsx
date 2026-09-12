@@ -10,7 +10,6 @@ import {
   VIEWPORT,
 } from "@/lib/animation";
 
-/** Each room card gets its own parallax ref */
 function LabRoomRow({
   feature,
   index,
@@ -19,7 +18,6 @@ function LabRoomRow({
   index: number;
 }) {
   const isEven = index % 2 === 0;
-  // Alternate direction: even rows image drifts up (-30→0), odd rows drift down (30→-30)
   const { ref: imgParallaxRef, y: imgY } = useParallaxY(
     isEven ? [-30, 30] : [30, -30],
   );
@@ -37,7 +35,6 @@ function LabRoomRow({
         className="relative flex-auto rounded-xl overflow-hidden"
         whileHover={{ scale: 1.01, transition: { duration: 0.35 } }}
       >
-        {/* Parallax wrapper — only wraps img, doesn't affect layout */}
         <motion.div ref={imgParallaxRef} style={{ y: imgY }} className="w-full h-full">
           <motion.img
             alt={feature.imageAlt}

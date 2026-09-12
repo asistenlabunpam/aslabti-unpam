@@ -1,5 +1,5 @@
-export const VIEWPORT = { once: true, margin: "-80px" };
-export const VIEWPORT_TIGHT = { once: true, margin: "-40px" };
+export const VIEWPORT = { once: false, margin: "-80px" };
+export const VIEWPORT_TIGHT = { once: false, margin: "-40px" };
 
 export const TRANSITION_BASE = { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const };
 export const TRANSITION_SLOW = { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const };
