@@ -27,25 +27,25 @@ export type PrimaryButtonProps = ButtonBaseProps &
 
 const sizeVariants = {
   sm: {
-    outer: "p-1",
-    inner: "gap-2 pl-5 pr-1.5 py-1.5 shadow-md shadow-blue-500/30",
-    text: "text-sm",
-    arrowWrapper: "size-6",
-    arrowIcon: "size-4 p-0.5",
+    outer: "p-0.5 sm:p-1",
+    inner: "gap-1.5 sm:gap-2 pl-3.5 sm:pl-5 pr-1 sm:pr-1.5 py-1 sm:py-1.5 shadow-sm sm:shadow-md shadow-blue-500/30",
+    text: "text-xs sm:text-sm",
+    arrowWrapper: "size-5 sm:size-6",
+    arrowIcon: "size-3.5 sm:size-4 p-0.5",
   },
   md: {
-    outer: "p-1.25",
-    inner: "gap-3 pl-7 pr-2 py-2 shadow-lg shadow-blue-500/40",
-    text: "text-lg",
-    arrowWrapper: "size-8",
-    arrowIcon: "size-6 p-1",
+    outer: "p-1 sm:p-1.25",
+    inner: "gap-2 sm:gap-2.5 md:gap-3 pl-4 sm:pl-5 md:pl-7 pr-1.5 sm:pr-2 py-1.5 sm:py-2 shadow-md sm:shadow-lg shadow-blue-500/40",
+    text: "text-sm sm:text-base md:text-lg",
+    arrowWrapper: "size-7 sm:size-8",
+    arrowIcon: "size-5 sm:size-6 p-0.5 sm:p-1",
   },
   lg: {
-    outer: "p-1.5",
-    inner: "gap-4 pl-8 pr-2.5 py-2.5 shadow-xl shadow-blue-500/40",
-    text: "text-xl",
-    arrowWrapper: "size-9",
-    arrowIcon: "size-7 p-1",
+    outer: "p-1 sm:p-1.25 md:p-1.5",
+    inner: "gap-2.5 sm:gap-3 md:gap-4 pl-5 sm:pl-6 md:pl-8 pr-2 sm:pr-2.5 py-2 sm:py-2.5 shadow-lg sm:shadow-xl shadow-blue-500/40",
+    text: "text-base sm:text-lg md:text-xl",
+    arrowWrapper: "size-8 sm:size-9",
+    arrowIcon: "size-6 sm:size-7 p-0.5 sm:p-1",
   },
 };
 
@@ -69,7 +69,7 @@ export const PrimaryButton = forwardRef<
   const currentSize = sizeVariants[size];
 
   const outerClasses = cn(
-    "group/start inline-flex h-auto w-max items-center justify-center rounded-full bg-transparent font-medium ring-1 ring-neutral-200 transition-all duration-300",
+    "group/start inline-flex h-auto w-max max-w-full items-center justify-center rounded-full bg-transparent font-medium ring-1 ring-neutral-200 transition-all duration-300",
     "cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2",
     "disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed",
     currentSize.outer,
@@ -86,7 +86,7 @@ export const PrimaryButton = forwardRef<
     >
       <span
         className={cn(
-          "text-neutral-100 font-medium transition-colors duration-100 ease-in-out",
+          "text-neutral-100 font-medium whitespace-nowrap transition-colors duration-100 ease-in-out",
           currentSize.text
         )}
       >
@@ -105,25 +105,27 @@ export const PrimaryButton = forwardRef<
       ) : showArrow ? (
         <div
           className={cn(
-            "relative flex items-center justify-center bg-neutral-100 overflow-hidden rounded-full transition-transform duration-100",
+            "relative flex shrink-0 items-center justify-center bg-neutral-100 overflow-hidden rounded-full transition-transform duration-100",
             currentSize.arrowWrapper
           )}
         >
-          <div className="absolute left-0 flex w-14 h-7 -translate-x-1/2 items-center justify-center transition-transform duration-500 ease-in-out group-hover/start:translate-x-0">
-            <ArrowRight
-              size={16}
-              className={cn(
-                "mx-auto transform text-neutral-800 opacity-0 group-hover/start:opacity-100",
-                currentSize.arrowIcon
-              )}
-            />
-            <ArrowRight
-              size={16}
-              className={cn(
-                "mx-auto transform text-neutral-800 opacity-100 transition-transform duration-300 ease-in-out group-hover/start:opacity-0",
-                currentSize.arrowIcon
-              )}
-            />
+          <div className="absolute inset-0 flex w-[200%] -translate-x-1/2 items-center justify-center transition-transform duration-500 ease-in-out group-hover/start:translate-x-0">
+            <div className="w-1/2 h-full flex items-center justify-center">
+              <ArrowRight
+                className={cn(
+                  "mx-auto transform text-neutral-800 opacity-0 group-hover/start:opacity-100",
+                  currentSize.arrowIcon
+                )}
+              />
+            </div>
+            <div className="w-1/2 h-full flex items-center justify-center">
+              <ArrowRight
+                className={cn(
+                  "mx-auto transform text-neutral-800 opacity-100 transition-transform duration-300 ease-in-out group-hover/start:opacity-0",
+                  currentSize.arrowIcon
+                )}
+              />
+            </div>
           </div>
         </div>
       ) : null}

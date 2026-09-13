@@ -2,17 +2,11 @@ import React, { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
 type ButtonBaseProps = {
-  /** Text content (alias for children, backward compatible) */
   text?: React.ReactNode;
-  /** Children content */
   children?: React.ReactNode;
-  /** Optional icon */
   icon?: React.ReactNode;
-  /** Icon placement relative to label. Defaults to 'left'. */
   iconPosition?: "left" | "right";
-  /** Button size variant. Defaults to 'md'. */
   size?: "sm" | "md" | "lg";
-  /** Optional custom className */
   className?: string;
 };
 
@@ -23,9 +17,9 @@ export type SecondaryButtonProps = ButtonBaseProps &
   );
 
 const sizeVariants = {
-  sm: "text-sm px-6 py-2.5 gap-2",
-  md: "text-lg px-9 py-4 gap-2.5",
-  lg: "text-xl px-10 py-4.5 gap-3",
+  sm: "text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-2.5 gap-1.5 sm:gap-2",
+  md: "text-sm sm:text-base md:text-lg px-5 sm:px-7 md:px-9 py-2.5 sm:py-3.5 md:py-4 gap-2 sm:gap-2.5",
+  lg: "text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-4.5 gap-2.5 sm:gap-3",
 };
 
 export const SecondaryButton = forwardRef<
@@ -46,7 +40,7 @@ export const SecondaryButton = forwardRef<
   const content = children ?? text;
 
   const baseClasses = cn(
-    "inline-flex items-center justify-center w-max h-auto font-medium rounded-full shadow-xs transition-all duration-300 cursor-pointer select-none",
+    "inline-flex items-center justify-center w-max max-w-full h-auto font-medium rounded-full shadow-xs transition-all duration-300 cursor-pointer select-none whitespace-nowrap",
     "bg-neutral-100 text-neutral-900 hover:bg-neutral-900 hover:text-neutral-100",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2",
     "disabled:opacity-50 disabled:pointer-events-none disabled:cursor-not-allowed",
