@@ -48,11 +48,11 @@ export function HeroSection() {
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const rawY = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const contentY = useSpring(rawY, { stiffness: 60, damping: 18 });
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const rawY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const contentY = useSpring(rawY, { stiffness: 50, damping: 16 });
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
 
-  const orbY = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  const orbY = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
     <div

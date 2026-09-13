@@ -15,6 +15,7 @@ import {
   staggerContainer,
   staggerItemLeft,
   useParallaxY,
+  useParallaxX,
   VIEWPORT,
 } from "@/lib/animation";
 
@@ -25,8 +26,17 @@ function FeatureColumn({
   features: NumberedFeature[];
   direction: "left" | "right";
 }) {
+  // Horizontal parallax: left column drifts left→center, right column right→center
+  const { ref: colRef, x: colX } = useParallaxX(
+    direction === "left" ? [-30, 10] : [30, -10]
+  );
+
   return (
-    <dl className="grid h-full grid-rows-2 divide-y divide-black/10 dark:divide-white/10">
+    <motion.div
+      ref={colRef}
+      style={{ x: colX }}
+      className="grid h-full grid-rows-2 divide-y divide-black/10 dark:divide-white/10"
+    >
       {features.map((feature, i) => (
         <motion.div
           key={feature.number}
@@ -58,13 +68,14 @@ function FeatureColumn({
           </dd>
         </motion.div>
       ))}
-    </dl>
+    </motion.div>
   );
 }
 
 export function AboutSection() {
-  const { ref: headingRef, y: headingY } = useParallaxY([-20, 20]);
-  const { ref: imgRef, y: imgY } = useParallaxY([-50, 50]);
+  const { ref: headingRef, y: headingY } = useParallaxY([-50, 30]);
+  const { ref: imgRef, y: imgY } = useParallaxY([-80, 80]);
+  const { ref: textRef, y: textY } = useParallaxY([20, -20]);
 
   return (
     <div id="tentang" className="bg-white py-32 overflow-hidden">
@@ -83,6 +94,8 @@ export function AboutSection() {
           </motion.h2>
 
           <motion.div
+            ref={textRef}
+            style={{ y: textY }}
             variants={staggerContainer(0.15, 0.1)}
             initial="hidden"
             whileInView="visible"
@@ -165,6 +178,7 @@ export function AboutSection() {
                 <FeatureColumn features={leftFeatures} direction="left" />
               </div>
 
+              {/* Center image — deep parallax: drifts up significantly as you scroll */}
               <motion.div
                 ref={imgRef}
                 style={{ y: imgY }}

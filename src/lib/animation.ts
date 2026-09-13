@@ -73,16 +73,11 @@ export const staggerItemLeft = {
 export const cardHoverY = -6;
 export const cardHoverShadow = "0 16px 40px rgba(0,0,0,0.12)";
 
-// ─── Scroll-linked parallax hook ────────────────────────────────────────────
-// Usage:
-//   const { ref, y } = useParallaxY([-40, 40]);
-//   <motion.div ref={ref} style={{ y }}>…</motion.div>
-
 import { useRef } from "react";
 import { useScroll, useTransform, useSpring, type MotionValue } from "motion/react";
 
 export function useParallaxY(
-  outputRange: [number, number] = [-40, 40],
+  outputRange: [number, number] = [-60, 60],
   smooth = true,
 ): { ref: React.RefObject<HTMLDivElement>; y: MotionValue<number> } {
   const ref = useRef<HTMLDivElement>(null!);
@@ -92,8 +87,39 @@ export function useParallaxY(
   });
   const raw = useTransform(scrollYProgress, [0, 1], outputRange);
   const y = smooth
-    ? useSpring(raw, { stiffness: 80, damping: 20, restDelta: 0.001 })
+    ? useSpring(raw, { stiffness: 55, damping: 15, restDelta: 0.001 })
     : raw;
   return { ref, y };
 }
 
+export function useParallaxX(
+  outputRange: [number, number] = [-40, 40],
+  smooth = true,
+): { ref: React.RefObject<HTMLDivElement>; x: MotionValue<number> } {
+  const ref = useRef<HTMLDivElement>(null!);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const raw = useTransform(scrollYProgress, [0, 1], outputRange);
+  const x = smooth
+    ? useSpring(raw, { stiffness: 55, damping: 15, restDelta: 0.001 })
+    : raw;
+  return { ref, x };
+}
+
+export function useParallaxScale(
+  outputRange: [number, number] = [0.9, 1.05],
+  smooth = true,
+): { ref: React.RefObject<HTMLDivElement>; scale: MotionValue<number> } {
+  const ref = useRef<HTMLDivElement>(null!);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const raw = useTransform(scrollYProgress, [0, 1], outputRange);
+  const scale = smooth
+    ? useSpring(raw, { stiffness: 60, damping: 18, restDelta: 0.0001 })
+    : raw;
+  return { ref, scale };
+}

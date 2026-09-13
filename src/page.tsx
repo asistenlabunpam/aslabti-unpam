@@ -74,7 +74,8 @@ const imagjes = [
 ];
 
 function ZoomParallaxSection() {
-  const { ref, y } = useParallaxY([-24, 24]);
+  // Heading drifts up strongly as it enters the viewport
+  const { ref: headingRef, y: headingY } = useParallaxY([-70, 50]);
 
   return (
     <section className="relative w-full bg-linear-to-b from-blue-400 to-transparent">
@@ -88,11 +89,11 @@ function ZoomParallaxSection() {
           )}
         />
         <motion.h2
-          ref={ref as React.RefObject<HTMLHeadingElement>}
-          style={{ y }}
+          ref={headingRef as React.RefObject<HTMLHeadingElement>}
+          style={{ y: headingY }}
           className="relative z-10 text-center text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-neutral-100"
         >
-          Lorem Ipsum Dolor Sit Amet
+          Galeri Kegiatan Laboratorium
         </motion.h2>
       </div>
       <ZoomParallax images={imagjes} />

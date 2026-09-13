@@ -11,9 +11,10 @@ import {
 } from "@/lib/animation";
 
 export function LabDetailsSection() {
-  // Opposing parallax: left image drifts up, right image drifts down
-  const { ref: leftRef, y: leftY } = useParallaxY([-30, 30]);
-  const { ref: rightRef, y: rightY } = useParallaxY([30, -30]);
+  // Three independent parallax refs — alternating directions for a layered depth effect
+  const { ref: ref1, y: y1 } = useParallaxY([40, -60]);   // right col: moves up
+  const { ref: ref2, y: y2 } = useParallaxY([-60, 40]);   // center col: moves down
+  const { ref: ref3, y: y3 } = useParallaxY([30, -70]);   // left col: moves up (offset)
 
   return (
     <div className="bg-neutral-50 overflow-hidden">
@@ -38,35 +39,11 @@ export function LabDetailsSection() {
             </motion.p>
           </motion.div>
 
-          <div className="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
-            {/* Left box — parallax drifts up */}
+          <div className="grid grid-cols-1 gap-y-16 py-20 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
+            {/* Image 1 — drifts up as you scroll down */}
             <motion.div
-              ref={leftRef}
-              style={{ y: leftY }}
-              variants={fadeLeft}
-              initial="hidden"
-              whileInView="visible"
-              viewport={VIEWPORT}
-            >
-              <motion.img
-                variants={scaleUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={VIEWPORT}
-                loading="lazy"
-                alt="Ruang Laboratorium Jaringan Komputer"
-                src="https://res.cloudinary.com/dhaonb1vn/image/upload/v1788871734/ruang-lab-611_buoukq.webp"
-                className="aspect-3/2 w-full rounded-lg object-cover"
-              />
-              <p className="mt-8 text-base text-neutral-500">
-                {labDetailsContent.box1Text}
-              </p>
-            </motion.div>
-
-            {/* Right box — parallax drifts down */}
-            <motion.div
-              ref={rightRef}
-              style={{ y: rightY }}
+              ref={ref1}
+              style={{ y: y1 }}
               variants={fadeRight}
               initial="hidden"
               whileInView="visible"
@@ -80,11 +57,50 @@ export function LabDetailsSection() {
                 loading="lazy"
                 alt="Ruang Laboratorium Komputer"
                 src="https://res.cloudinary.com/dhaonb1vn/image/upload/v1788871717/ruang-lab-775_ym6vvd.webp"
-                className="aspect-3/2 w-full rounded-lg object-cover"
+                className="aspect-3/4 w-full rounded-lg object-cover"
               />
-              <p className="mt-8 text-base text-neutral-500">
-                {labDetailsContent.box2Text}
-              </p>
+            </motion.div>
+
+            {/* Image 2 — drifts down as you scroll down (opposing) */}
+            <motion.div
+              ref={ref2}
+              style={{ y: y2 }}
+              variants={fadeLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT}
+            >
+              <motion.img
+                variants={scaleUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={VIEWPORT}
+                loading="lazy"
+                alt="Ruang Laboratorium Jaringan Komputer"
+                src="https://res.cloudinary.com/dhaonb1vn/image/upload/v1788871734/ruang-lab-611_buoukq.webp"
+                className="aspect-3/4 w-full rounded-lg object-cover"
+              />
+            </motion.div>
+
+            {/* Image 3 — offset up from image 1 for staggered depth */}
+            <motion.div
+              ref={ref3}
+              style={{ y: y3 }}
+              variants={fadeRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={VIEWPORT}
+            >
+              <motion.img
+                variants={scaleUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={VIEWPORT}
+                loading="lazy"
+                alt="Ruang Laboratorium Komputer"
+                src="https://res.cloudinary.com/dhaonb1vn/image/upload/v1788871717/ruang-lab-775_ym6vvd.webp"
+                className="aspect-3/4 w-full rounded-lg object-cover"
+              />
             </motion.div>
           </div>
         </section>
