@@ -5,6 +5,7 @@ import { AppHeader } from "./components/app-header";
 import { AppFooter } from "./components/app-footer";
 import Page from "./page";
 import "./index.css";
+import { GlobalMagnet } from "./components/magnet-item";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")!).render(
       }}
     >
       <AppHeader />
+      <GlobalMagnet />
       <main className="">
         <Page />
       </main>

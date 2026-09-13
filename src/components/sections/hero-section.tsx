@@ -3,15 +3,15 @@ import { ParallaxHeroImages } from "@/components/parallax-hero-images";
 import { heroContent, heroImages } from "@/data/content";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { fadeDown, fadeUp, staggerContainer } from "@/lib/animation";
-import { ArrowRight, ChevronDown, User } from "lucide-react";
+import { ArrowRight, ChevronDown, GraduationCap, Code2, Users } from "lucide-react";
 import { PrimaryButton } from "../primary-button";
 import { SecondaryButton } from "../secondary-button";
 
 const incentives = [
-  { name: 'Free, contactless delivery', icon: User },
-  { name: 'No questions asked returns', icon: User },
-  { name: '2-year warranty', icon: User },
-]
+  { name: "Asistensi Praktikum", icon: GraduationCap },
+  { name: "Hands-on Praktikum", icon: Code2 },
+  { name: "Talenta Digital", icon: Users },
+];
 
 function ScrollIndicator() {
   return (
@@ -89,10 +89,10 @@ export function HeroSection() {
           variants={staggerContainer(0.15, 0.2)}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center gap-7"
+          className="flex flex-col items-center gap-8"
         >
-          <motion.div variants={fadeDown} className="flex justify-center mb-1">
-            <div className="relative flex items-center gap-x-2 rounded-full pl-1 py-1 pr-3 text-sm/6 text-neutral-700 ring-1 ring-neutral-900/15 bg-white/60 backdrop-blur-sm">
+          <motion.div variants={fadeDown} className="flex justify-center mb-1 p-1 ring-1 ring-neutral-100/30 rounded-full">
+            <div className="relative flex items-center gap-x-2 rounded-full pl-1 py-1 pr-3 text-sm/6 text-neutral-700 ring-1 ring-neutral-900/10 bg-neutral-100 backdrop-blur-sm shadow-lg">
               <div className="flex items-center gap-x-1.5 text-neutral-100 font-medium bg-neutral-900 px-2 py-0.5 rounded-full">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@ export function HeroSection() {
                 className="flex items-center gap-x-1 pointer-events-auto"
               >
                 <span aria-hidden="true" className="absolute inset-0" />
-                Lihat repositori kami
+                Eksplorasi repositori ASLAB
                 <ArrowRight className="size-3" />
               </a>
             </div>
@@ -132,10 +132,20 @@ export function HeroSection() {
 
           <motion.div
             variants={fadeUp}
-            className="my-2 flex flex-wrap items-center justify-center gap-3"
+            className="my-2 flex flex-wrap items-center justify-center gap-5"
           >
-            <PrimaryButton text="Tentang Kami" />
-            <SecondaryButton text="Lihat Galeri" />
+            <PrimaryButton
+              text="Eksplorasi Profil"
+              onClick={() =>
+                document.getElementById("tentang")?.scrollIntoView({ behavior: "smooth" })
+              }
+            />
+            <SecondaryButton
+              text="Dokumentasi Praktikum"
+              onClick={() =>
+                document.getElementById("galeri")?.scrollIntoView({ behavior: "smooth" })
+              }
+            />
           </motion.div>
         </motion.div>
 
@@ -147,7 +157,7 @@ export function HeroSection() {
           <div className="flex overflow-x-auto">
             <div className="mx-auto flex py-3 whitespace-nowrap divide-x divide-neutral-300">
               {incentives.map((incentive) => (
-                <div key={incentive.name} className="flex items-center text-sm font-medium text-neutral-500 px-5">
+                <div key={incentive.name} className="flex items-center text-sm font-medium text-neutral-600 px-5">
                   <incentive.icon aria-hidden="true" className="mr-2 size-4 flex-none" />
                   <span>{incentive.name}</span>
                 </div>

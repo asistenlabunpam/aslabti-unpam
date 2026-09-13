@@ -30,7 +30,12 @@ export function BottomCtaSection() {
           Wujudkan potensi terbaikmu di lingkungan laboratorium yang mendukung, bersama tim asisten yang berdedikasi dan inovatif.
         </motion.p>
 
-        <PrimaryButton text="Lebih Dekat" />
+        <PrimaryButton
+          text="Lebih Dekat"
+          onClick={() =>
+            document.getElementById("kontak")?.scrollIntoView({ behavior: "smooth" })
+          }
+        />
       </motion.div>
     </div>
   );

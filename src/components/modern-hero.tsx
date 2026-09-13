@@ -143,13 +143,11 @@ const Schedule = () => {
       </motion.h1>
       
       <div className="space-y-9 divide-y divide-neutral-300">
-        <ScheduleItem title="NG-21" date="Dec 9th" />
-        <ScheduleItem title="Starlink" date="Dec 20th" />
-        <ScheduleItem title="Starlink" date="Jan 13th" />
-        <ScheduleItem title="Turksat 6A" date="Feb 22nd" />
-        <ScheduleItem title="NROL-186" date="Mar 1st" />
-        <ScheduleItem title="GOES-U" date="Mar 8th" />
-        <ScheduleItem title="ASTRA 1P" date="Apr 8th" />
+        <ScheduleItem title="Apa itu platform ASLAB TI UNPAM?" date="Website ini adalah platform resmi Asisten Laboratorium Teknik Informatika Universitas Pamulang untuk mengakses informasi jadwal asistensi, kurikulum praktikum, modul, regulasi lab, dan berita acara kegiatan." />
+        <ScheduleItem title="Mata kuliah praktikum apa saja yang didukung oleh ASLAB?" date="Terdapat 14 mata kuliah praktikum, mulai dari tingkat awal seperti Algoritma & Pemrograman dan Basis Data, hingga materi tingkat lanjut seperti Machine Learning, Cloud Computing, dan Mobile Programming." />
+        <ScheduleItem title="Di mana saja lokasi ruang laboratorium komputer TI UNPAM?" date="Laboratorium tersebar di dua gedung kampus: Gedung A (Lantai 6) Ruang 611 dan Ruang 612 (fokus pada Jaringan Komputer dan Cloud Computing) dan Gedung C (Lantai 8) Ruang 773, 775, 776, dan 782 (fokus pada Pemrograman, Mobile Programming, Basis Data, dan Data Mining)." />
+        <ScheduleItem title="Apa tugas utama asisten laboratorium saat sesi praktikum?" date="Aslab bertugas membimbing mahasiswa memahami materi teknis, menyiapkan perangkat keras, software, dan koneksi jaringan sebelum praktikum dimulai, mengawasi kepatuhan tata tertib, serta mengelola inventaris lab." />
+        <ScheduleItem title="Apakah mahasiswa bisa mendaftar menjadi asisten lab lewat website ini?" date="Pendaftaran aslab baru dapat dipantau melalui menu Recruitment di bagian navigasi bawah saat periode seleksi dibuka." />
       </div>
     </section>
   );
@@ -161,10 +159,10 @@ const ScheduleItem = ({ title, date }: { title: string; date: string; }) => {
       initial={{ y: 48, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.75 }}
-      className="pb-9"
+      className="pb-9 space-y-5"
     >
-      <p className="mb-1.5 text-xl text-neutral-950">{title}</p>
-      <p className="text-sm uppercase text-neutral-800">{date}</p>
+      <p className="text-xl text-neutral-950">{title}</p>
+      <p className="text-sm/6 text-neutral-700">{date}</p>
     </motion.div>
   );
 };

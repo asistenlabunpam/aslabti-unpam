@@ -35,7 +35,7 @@ export const heroImages = [
 export const heroContent = {
   title: "Asisten Laboratorium Teknik Informatika",
   description:
-    "Pusat kegiatan praktikum, bimbingan asistensi akademik, dan eksplorasi teknologi terapan untuk mencetak talenta digital yang unggul, adaptif, dan berdaya saing global.",
+    "Pusat keunggulan praktikum komputasi, asistensi akademik terstruktur, dan inovasi teknologi terapan di Teknik Informatika Universitas Pamulang.",
 };
 
 export const aboutContent = {
