@@ -10,7 +10,7 @@
 [build.environment]
   # Mengunci versi Node.js ke LTS yang didukung penuh oleh Vite 8 & React 19
   NODE_VERSION = "20"
-  NPM_FLAGS = "--no-audit --prefer-offline"
+  NPM_FLAGS = "--legacy-peer-deps --no-audit"
 
 # SPA Routing: Mengarahkan semua request rute ke index.html (mencegah error 404 saat refresh halaman)
 [[redirects]]
