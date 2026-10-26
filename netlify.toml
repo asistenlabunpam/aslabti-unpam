@@ -1,0 +1,40 @@
+# Netlify Configuration for Vite + React Project
+# Docs: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Perintah build standar project (type-check + vite build)
+  command = "npm run build"
+  # Folder output build Vite yang akan di-publish oleh Netlify
+  publish = "dist"
+
+[build.environment]
+  # Mengunci versi Node.js ke LTS yang didukung penuh oleh Vite 8 & React 19
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--no-audit --prefer-offline"
+
+# SPA Routing: Mengarahkan semua request rute ke index.html (mencegah error 404 saat refresh halaman)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache-Control: Aset statis dengan hash (JS, CSS, Font) di-cache 1 tahun (immutable)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache-Control: index.html selalu dicek ulang agar user langsung mendapat versi terbaru saat ada deploy baru
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Global Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

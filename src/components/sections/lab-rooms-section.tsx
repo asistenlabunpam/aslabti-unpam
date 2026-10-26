@@ -1,0 +1,130 @@
+import { labRoomsSection, labRooms } from "@/data/content";
+import { motion } from "motion/react";
+import {
+  fadeLeft,
+  fadeRight,
+  fadeUp,
+  staggerContainer,
+  staggerItem,
+  useParallaxY,
+  useParallaxX,
+  VIEWPORT,
+} from "@/lib/animation";
+
+function LabRoomRow({
+  feature,
+  index,
+}: {
+  feature: { name: string; description: string; imageSrc: string; imageAlt: string };
+  index: number;
+}) {
+  const isEven = index % 2 === 0;
+  // Stronger image parallax — alternating direction per row
+  const { ref: imgParallaxRef, y: imgY } = useParallaxY(
+    isEven ? [-60, 50] : [50, -60],
+  );
+  // Text block drifts horizontally from the opposite side of the image
+  const { ref: textParallaxRef, x: textX } = useParallaxX(
+    isEven ? [30, -20] : [-30, 20],
+  );
+
+  return (
+    <div
+      key={feature.name}
+      className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-16"
+    >
+      <motion.div
+        variants={isEven ? fadeLeft : fadeRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={VIEWPORT}
+        className="relative flex-auto rounded-xl overflow-hidden"
+        whileHover={{ scale: 1.01, transition: { duration: 0.35 } }}
+      >
+        {/* Parallax image container */}
+        <motion.div ref={imgParallaxRef} style={{ y: imgY }} className="w-full h-full">
+          <motion.img
+            alt={feature.imageAlt}
+            src={feature.imageSrc}
+            loading="lazy"
+            className="aspect-4/3 w-full bg-neutral-100 object-cover"
+            whileHover={{
+              scale: 1.06,
+              transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+            }}
+          />
+        </motion.div>
+        <div className="absolute inset-0 bg-linear-to-t from-neutral-900 to-40% to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 flex items-center gap-x-4 p-6">
+          <motion.div
+            className="w-px h-5 bg-neutral-100 rounded-full"
+            initial={{ scaleY: 0, opacity: 0 }}
+            whileInView={{ scaleY: 1, opacity: 0.3 }}
+            viewport={VIEWPORT}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          />
+          <h3 className="text-lg font-medium text-neutral-100">{feature.name}</h3>
+        </div>
+      </motion.div>
+
+      {/* Text block with horizontal parallax */}
+      <motion.div
+        ref={textParallaxRef}
+        style={{ x: textX }}
+        variants={staggerContainer(0.12, 0.1)}
+        initial="hidden"
+        whileInView="visible"
+        viewport={VIEWPORT}
+        className="mt-6 lg:mt-0"
+      >
+        <motion.h3
+          variants={isEven ? fadeRight : fadeLeft}
+          className="text-2xl font-medium text-neutral-900"
+        >
+          {feature.name}
+        </motion.h3>
+        <motion.p
+          variants={staggerItem}
+          className="mt-5 text-lg/normal text-neutral-700"
+        >
+          {feature.description}
+        </motion.p>
+      </motion.div>
+    </div>
+  );
+}
+
+export function LabRoomsSection() {
+  const { ref: titleRef, y: titleY } = useParallaxY([-40, 20]);
+
+  return (
+    <div id="aktivitas" className="bg-white w-full overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 2xl:px-0">
+        <div className="mx-auto space-y-16 max-w-2xl px-4 lg:max-w-none">
+          <motion.div
+            variants={staggerContainer(0.12, 0)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT}
+            className="max-w-3xl"
+          >
+            <motion.h2
+              ref={titleRef as React.RefObject<HTMLHeadingElement>}
+              style={{ y: titleY }}
+              variants={fadeUp}
+              className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl"
+            >
+              {labRoomsSection.title}
+            </motion.h2>
+          </motion.div>
+
+          <div className="space-y-20">
+            {labRooms.map((feature, index) => (
+              <LabRoomRow key={feature.name} feature={feature} index={index} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
